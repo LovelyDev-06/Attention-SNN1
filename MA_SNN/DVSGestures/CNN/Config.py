@@ -12,8 +12,8 @@ class configs(object):
         self.t_ratio=5
         self.epoch = 0
         self.num_epochs = 300
-        self.onlyTest = False
-        self.pretrained_path = None
+        self.onlyTest = True
+        self.pretrained_path = os.path.dirname(os.path.abspath(__file__)) + os.sep + "Result" + os.sep + "CSA_SNN(CNN)-DVS-Gesture_dt=25ms_T=40.t7"
 
         self.batch_size = 128
         self.batch_size_test = 128
