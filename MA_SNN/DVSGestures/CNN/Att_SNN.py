@@ -41,4 +41,4 @@ def main():
 
     print("best acc:", config.best_acc, "best_epoch:", config.best_epoch)
 
-    save_csv(config=config)
+    # save_csv(config=config)
