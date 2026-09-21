@@ -15,7 +15,8 @@ def process(config):
     config.acc_test_list = []
 
     if config.pretrained_path != None:
-        pre_dict = torch.load(config.pretrained_path)['net']
+        # pre_dict = torch.load(config.pretrained_path)['net']
+        pre_dict = torch.load(config.pretrained_path, map_location='cpu')['net']
         pre = {}
         for k,_ in pre_dict.items():
             pre[k[7:]] = pre_dict[k]
