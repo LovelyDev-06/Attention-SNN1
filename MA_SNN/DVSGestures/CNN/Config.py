@@ -5,7 +5,7 @@ import torch.nn as nn
 class configs(object):
     def __init__(self):
         self.dt = 25
-        self.T = 60
+        self.T = 40
 
         self.attention = "no"
         self.c_ratio=8
