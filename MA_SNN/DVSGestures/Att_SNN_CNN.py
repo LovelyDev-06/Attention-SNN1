@@ -12,7 +12,7 @@ sys.path.append(rootPath)
 from DVSGestures.CNN import Config
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "4,"
-config = config()
+config = Config.configs() 
 config.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(config.device)
 
