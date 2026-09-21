@@ -224,7 +224,7 @@ def create_net(config):
     )
 
     config.scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer=config.optimizer, mode="min", factor=0.1, patience=5, verbose=True
+        optimizer=config.optimizer, mode="min", factor=0.1, patience=5
     )
 
     config.model = nn.DataParallel(config.model, device_ids=config.device_ids)
