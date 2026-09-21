@@ -13,7 +13,7 @@ class configs(object):
         self.epoch = 0
         self.num_epochs = 300
         self.onlyTest = True
-        self.pretrained_path = os.path.dirname(os.path.abspath(__file__)) + os.sep + "Result" + os.sep + "CSA_SNN(CNN)-DVS-Gesture_dt=25ms_T=40.t7"
+        self.pretrained_path = os.path.dirname(os.path.abspath(__file__)) + os.sep + "Results" + os.sep + "CSA_SNN(CNN)-DVS-Gesture_dt=25ms_T=40.t7"
 
         self.batch_size = 128
         self.batch_size_test = 128
