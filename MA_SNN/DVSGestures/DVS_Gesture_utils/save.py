@@ -6,17 +6,24 @@ def save_csv(config):
     config.epoch_list.append(config.best_epoch)
     config.acc_test_list.append(config.best_acc)
 
-    lists = [config.loss_train_list,
-             config.loss_test_list,
-             config.acc_train_list,
+    # lists = [config.loss_train_list,
+    #          config.loss_test_list,
+    #          config.acc_train_list,
+    #          config.acc_test_list]
+    # csv = pd.DataFrame(
+    #     data=lists,
+    #     index=['Train_Loss',
+    #            'Test_Loss',
+    #            'Train_Accuracy',
+    #            'Test_Accuracy'],
+    #     columns=config.epoch_list)
+    lists = [config.loss_test_list,
              config.acc_test_list]
     csv = pd.DataFrame(
         data=lists,
-        index=['Train_Loss',
-               'Test_Loss',
-               'Train_Accuracy',
+        index=['Test_Loss',
                'Test_Accuracy'],
-        columns=config.epoch_list)
+        columns=config.epoch_list if config.epoch_list else [1])
     csv.index.name = 'Epochs'
 
     if not os.path.exists(config.recordPath):
