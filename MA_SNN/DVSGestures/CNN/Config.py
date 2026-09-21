@@ -15,8 +15,8 @@ class configs(object):
         self.onlyTest = True
         self.pretrained_path = os.path.dirname(os.path.abspath(__file__)) + os.sep + "Results" + os.sep + "CSA_SNN(CNN)-DVS-Gesture_dt=25ms_T=40.t7"
 
-        self.batch_size = 32
-        self.batch_size_test = 32
+        self.batch_size = 16
+        self.batch_size_test = 16
 
         # None  'kaiming'  'xavier'
         self.init_method = None
