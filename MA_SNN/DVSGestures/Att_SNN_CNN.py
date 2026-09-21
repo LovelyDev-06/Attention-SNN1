@@ -13,8 +13,7 @@ from DVSGestures.CNN import Config
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "4,"
 config = Config.configs() 
-# config.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-config.device = torch.device("cpu")
+config.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(config.device)
 
 
