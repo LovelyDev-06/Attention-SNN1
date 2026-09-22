@@ -5,7 +5,7 @@ import torch.nn as nn
 class configs(object):
     def __init__(self):
         self.dt = 25
-        self.T = 20
+        self.T = 40
 
         self.attention = "CSA"
         self.c_ratio=8
@@ -15,8 +15,8 @@ class configs(object):
         self.onlyTest = True
         self.pretrained_path = os.path.dirname(os.path.abspath(__file__)) + os.sep + "Results" + os.sep + "CSA_SNN(CNN)-DVS-Gesture_dt=25ms_T=40.t7"
 
-        self.batch_size = 16
-        self.batch_size_test = 16
+        self.batch_size = 8
+        self.batch_size_test = 8
 
         # None  'kaiming'  'xavier'
         self.init_method = None
@@ -31,7 +31,7 @@ class configs(object):
         self.target_size = 11
 
         # Data
-        self.clip = 5
+        self.clip = 10
         self.is_train_Enhanced = True
         self.is_spike = False
         self.interval_scaling = False
