@@ -11,7 +11,7 @@ class configs(object):
         self.c_ratio=8
         self.t_ratio=5
         self.epoch = 0
-        self.num_epochs = 0
+        self.num_epochs = 1
         self.onlyTest = True
         self.pretrained_path = os.path.dirname(os.path.abspath(__file__)) + os.sep + "Results" + os.sep + "CSA_SNN(CNN)-DVS-Gesture_dt=25ms_T=40.t7"
 
