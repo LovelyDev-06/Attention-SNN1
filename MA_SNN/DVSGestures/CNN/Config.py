@@ -7,7 +7,7 @@ class configs(object):
         self.dt = 25
         self.T = 20
 
-        self.attention = "no"
+        self.attention = "CSA"
         self.c_ratio=8
         self.t_ratio=5
         self.epoch = 0
