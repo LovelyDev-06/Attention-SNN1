@@ -16,13 +16,10 @@ def process(config):
 
     if config.pretrained_path != None:
         pre_dict = torch.load(config.pretrained_path)['net']
-        pre = {}
-        for k,_ in pre_dict.items():
-            pre[k[7:]] = pre_dict[k]
         model_dict = config.model.state_dict()
-        pre_dict = {k: v for k, v in pre.items() if k in model_dict}
-        # print(pre_dict.keys())
-        model_dict.update(pre_dict)
+        matched_dict = {k: v for k, v in pre_dict.items() if k in model_dict}
+        print('matched %d/%d keys from pretrained model' % (len(matched_dict), len(model_dict)))
+        model_dict.update(matched_dict)
         config.model.load_state_dict(model_dict)
         print('loading model...')
 
