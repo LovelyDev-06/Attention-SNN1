@@ -1,0 +1,1587 @@
+problem_id,dataset,strategy,code,passed,valid_ast,error,final_beam_score,step_judge,judge_calls,flops_strategy,flops_problem_id,flops_num_params,flops_prompt_tokens,flops_generated_tokens,flops_num_generations,flops_extra_forward_passes,flops_extra_forward_tokens,flops_total_tokens,flops_estimated_flops
+mbpp_11,mbpp,tree_search,"def remove_Occ(s, ch):
+    i = 0
+    while s[i] != ch:
+        i += 1
+    j = len(s) - 1
+    while s[j] == ch:
+        j -= 1
+    return s[:i] + s[i+1:j] + s[j+1:]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpud4_0ato.py"", line 10, in <module>
+    assert remove_Occ(""hello"",""l"") == ""heo""
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.349609375,llm,12,tree_search,mbpp_11,1543714304,83,468,1,12,1810,551,7326468086784
+mbpp_12,mbpp,tree_search,"def sort_matrix(matrix):
+    return sorted(matrix, key=lambda x: sum(x))",True,True,,0.75390625,llm,3,tree_search,mbpp_12,1543714304,128,120,1,3,485,248,2272347455488
+mbpp_14,mbpp,tree_search,"def find_Volume(base_length, height, depth):
+    return base_length * height * depth",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp8anfusgq.py"", line 4, in <module>
+    assert find_Volume(10,8,6) == 240
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.6796875,llm,6,tree_search,mbpp_14,1543714304,81,240,1,6,813,321,3519668613120
+mbpp_16,mbpp,tree_search,"import re
+
+def is_text_lowercase_underscore(text: str) -> bool:
+    return bool(re.fullmatch(r'[a-z]+_[a-z]+', text))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp7ge2nbz2.py"", line 6, in <module>
+    assert text_lowercase_underscore(""aab_cbbbc"")==(True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'text_lowercase_underscore' is not defined. Did you mean: 'is_text_lowercase_underscore'?",0.6796875,llm,3,tree_search,mbpp_16,1543714304,89,120,1,3,363,209,1775271449600
+mbpp_17,mbpp,tree_search,"def square_perimeter(side_length):
+    return 4 * side_length",True,True,,0.89453125,llm,3,tree_search,mbpp_17,1543714304,78,60,1,3,292,138,1336856587264
+mbpp_18,mbpp,tree_search,"def remove_dirty_chars(s1, s2):
+    return ''.join([i for i in s1 if i not in s2])",True,True,,0.8515625,llm,3,tree_search,mbpp_18,1543714304,87,99,1,3,356,186,1682648591360
+mbpp_19,mbpp,tree_search,"def has_duplicates(arr):
+    return len(set(arr)) != len(arr)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpeue2ze0h.py"", line 4, in <module>
+    assert test_duplicate(([1,2,3,4,5]))==False
+           ^^^^^^^^^^^^^^
+NameError: name 'test_duplicate' is not defined. Did you mean: 'has_duplicates'?",0.5625,llm,3,tree_search,mbpp_19,1543714304,83,60,1,3,309,143,1404780016640
+mbpp_20,mbpp,tree_search,"def is_woodall(num):
+    return num % 9 == 1",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpfo7zqfq8.py"", line 4, in <module>
+    assert is_woodall(383) == True
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.5,llm,3,tree_search,mbpp_20,1543714304,78,120,1,3,329,198,1636337162240
+mbpp_56,mbpp,tree_search,"def check(num):
+    return num == 2 * int(str(num)[::-1]) - 1",True,True,,0.5,llm,3,tree_search,mbpp_56,1543714304,77,120,1,3,326,197,1623987447808
+mbpp_57,mbpp,tree_search,"def find_Max_Num(digits):
+    # Convert each digit to an integer and sort them in descending order
+    return int(''.join(sorted(map(str, digits), reverse=True)))",True,True,,0.65234375,llm,3,tree_search,mbpp_57,1543714304,87,120,1,3,384,207,1833932593152
+mbpp_58,mbpp,tree_search,"def opposite_signs(x, y):
+    return x * y < 0",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmphtopo0ow.py"", line 4, in <module>
+    assert opposite_Signs(1,-2) == True
+           ^^^^^^^^^^^^^^
+NameError: name 'opposite_Signs' is not defined. Did you mean: 'opposite_signs'?",0.6796875,llm,3,tree_search,mbpp_58,1543714304,80,69,1,3,307,149,1417129731072
+mbpp_59,mbpp,tree_search,"def is_octagonal(n):
+    k = (3 * n - 1) // 2
+    return True if k >= 0 else False",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp79o4o2my.py"", line 5, in <module>
+    assert is_octagonal(5) == 65
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.3203125,llm,6,tree_search,mbpp_59,1543714304,73,240,1,6,785,313,3408521183232
+mbpp_61,mbpp,tree_search,"def count_Substrings(s):
+    count = 0
+    for i in range(len(s)):
+        cur_sum = 0
+        start = i
+        while True:
+            cur_sum += int(s[i])
+            if i + 1 >= len(s) or cur_sum != len(s[i+1:]):
+                break
+            end = i + 1
+            count += (end - start) * (start + 1)
+            i = end
+    return count",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpffumjtqx.py"", line 15, in <module>
+    assert count_Substrings('112112') == 6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.46875,llm,12,tree_search,mbpp_61,1543714304,87,456,1,12,2049,543,8039664095232
+mbpp_62,mbpp,tree_search,"def smallest_num(nums):
+    return min(nums)",True,True,,0.93359375,llm,3,tree_search,mbpp_62,1543714304,88,45,1,3,309,133,1373905730560
+mbpp_63,mbpp,tree_search,"from typing import List
+
+def max_difference(pairs: List[List[int]]) -> int:
+    return max(max(pair) - min(pair) for pair in pairs)",True,True,,0.65234375,llm,9,tree_search,mbpp_63,1543714304,99,312,1,9,1528,411,6014310928384
+mbpp_64,mbpp,tree_search,"def subject_marks(tuples):
+    return sorted(tuples, key=lambda x: x[1])",True,True,,0.9453125,llm,3,tree_search,mbpp_64,1543714304,133,120,1,3,483,253,2281609741312
+mbpp_65,mbpp,tree_search,"def recursive_list_sum(lst):
+    total = 0
+    for elem in lst:
+        if type(elem) is list:
+            total += recursive_list_sum(elem)
+        else:
+            total += elem
+    return total",True,True,,0.70703125,llm,12,tree_search,mbpp_65,1543714304,87,234,1,12,1639,321,6088409214976
+mbpp_66,mbpp,tree_search,"def pos_count(lst):
+    return sum(1 for x in lst if x > 0)",True,True,,0.8671875,llm,3,tree_search,mbpp_66,1543714304,81,75,1,3,318,156,1472703446016
+mbpp_67,mbpp,tree_search,"def bell_number(n):
+    # Initialize a list with [0]*n and fill it with 1s
+    arr = [1] * n
+    for i in range(1, n+1): 
+        # Calculate value at index 'i'
+        val = 0
+        j = i - 1
+        while j >= 0:
+            # Update value with current value + previous values
+            val += arr[j]
+            j -= 1
+        # Assign calculated value back to the array
+        arr[i-1] = val
+    return arr[n-1]
+
+# Test case
+assert bell_number(2) == 2",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpovt__mlv.py"", line 20, in <module>
+    assert bell_number(10)==115975
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.59375,llm,15,tree_search,mbpp_67,1543714304,75,549,1,15,2483,624,9638952114176
+mbpp_68,mbpp,tree_search,"def is_Monotonic(arr):
+    up = down = True
+    for i in range(1, len(arr)):
+        if arr[i] > arr[i-1]:
+            down = False
+        elif arr[i] < arr[i-1]:
+            up = False
+    return up or down",True,True,,0.4375,llm,9,tree_search,mbpp_68,1543714304,87,318,1,9,1331,405,5387562920960
+mbpp_69,mbpp,tree_search,"def is_sublist(list1, sub_list):
+    return all(item in list1 for item in sub_list)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpzo8aespi.py"", line 4, in <module>
+    assert is_sublist([2,4,3,5,7],[3,7])==False
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.62109375,llm,3,tree_search,mbpp_69,1543714304,86,120,1,3,350,206,1725872591872
+mbpp_70,mbpp,tree_search,"def get_equal(tuples):
+    return len(set(map(len, tuples))) <= 1",True,True,,0.8359375,llm,3,tree_search,mbpp_70,1543714304,96,120,1,3,377,216,1840107450368
+mbpp_71,mbpp,tree_search,"def comb_sort(arr):
+    n = len(arr)
+    gap = n
+    swapped = True
+    
+    while gap != 1 or swapped:
+        gap //= 1.3
+        swapped = False
+        
+        for i in range(0, n - gap):
+            if arr[i] > arr[i + gap]:
+                arr[i], arr[i + gap] = arr[i + gap], arr[i]
+                swapped = True",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpdvieyuhk.py"", line 15, in <module>
+    assert comb_sort([5, 15, 37, 25, 79]) == [5, 15, 25, 37, 79]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpdvieyuhk.py"", line 10, in comb_sort
+    for i in range(0, n - gap):
+             ^^^^^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer",0.75390625,llm,24,tree_search,mbpp_71,1543714304,103,912,1,24,4741,1015,17845337354240
+mbpp_72,mbpp,tree_search,"```python3
+def is_dif_square(n):
+    # Check if n/2 and (n+1)/2 can both be expressed as sum of 2 squares
+    return bool((",False,False,SyntaxError,0.2451171875,llm,3,tree_search,mbpp_72,1543714304,82,120,1,3,368,202,1769096592384
+mbpp_74,mbpp,tree_search,"def is_samepatterns(patterns, strings):
+    return all(s == p for s, p in zip(strings, map(tuple, patterns)))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpxo5_gufj.py"", line 4, in <module>
+    assert is_samepatterns([""red"",""green"",""green""], [""a"", ""b"", ""b""])==True
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.62109375,llm,3,tree_search,mbpp_74,1543714304,89,114,1,3,373,203,1787621164032
+mbpp_75,mbpp,tree_search,"def find_tuples(lst, k):
+    return [t for t in lst if all(x % k == 0 for x in t)]",True,True,,0.6796875,llm,6,tree_search,mbpp_75,1543714304,121,240,1,6,1066,361,4424285195264
+mbpp_77,mbpp,tree_search,"def is_Diff(n):
+    return n % 11 != 0",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpx5plw7_6.py"", line 4, in <module>
+    assert is_Diff (12345) == False
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.5625,llm,6,tree_search,mbpp_77,1543714304,80,240,1,6,773,320,3393084040192
+mbpp_79,mbpp,tree_search,"def word_len(s):
+    return len(s) % 2 != 0",True,True,,0.8359375,llm,3,tree_search,mbpp_79,1543714304,77,66,1,3,297,143,1367730873344
+mbpp_80,mbpp,tree_search,"def tetrahedral_number(n):
+    return n * (n + 1) * (n + 2) // 6",True,True,,0.81640625,llm,3,tree_search,mbpp_80,1543714304,75,114,1,3,329,189,1608550304768
+mbpp_82,mbpp,tree_search,"import math
+
+def volume_sphere(radius):
+    return (4/3) * math.pi * radius**3",True,True,,0.70703125,llm,3,tree_search,mbpp_82,1543714304,100,87,1,3,382,187,1766009163776
+mbpp_83,mbpp,tree_search,"3
+def get_Char(s: str) -> str:
+    return chr(sum(ord(c) for c in s) % 26 + ord('a'))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp92y4ii15.py"", line 5, in <module>
+    assert get_Char(""abc"") == ""f""
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.70703125,llm,3,tree_search,mbpp_83,1543714304,88,111,1,3,353,199,1713522877440
+mbpp_84,mbpp,tree_search,"def sequence(n):
+    if n <= 2:
+        return 1
+    else:
+        return sequence(n-1) + sequence(n-2)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpjfbclcpv.py"", line 7, in <module>
+    assert sequence(10) == 6
+           ^^^^^^^^^^^^^^^^^
+AssertionError",0.3203125,llm,3,tree_search,mbpp_84,1543714304,76,120,1,3,345,196,1679561162752
+mbpp_85,mbpp,tree_search,"import math
+
+def surfacearea_sphere(radius):
+    return 4 * math.pi * radius ** 2",True,True,,0.6796875,llm,3,tree_search,mbpp_85,1543714304,103,81,1,3,387,184,1772184020992
+mbpp_86,mbpp,tree_search,"def centered_hexagonal_number(n):
+    return int((3 * n * (n - 1)) // 2)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp4xx70irw.py"", line 4, in <module>
+    assert centered_hexagonal_number(10) == 271
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.65234375,llm,3,tree_search,mbpp_86,1543714304,76,120,1,3,321,196,1605462876160
+mbpp_87,mbpp,tree_search,"def merge_dictionaries_three(dict1, dict2, dict3):
+    return {**dict1, **dict2, **dict3}",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpya0r76h2.py"", line 5, in <module>
+    assert merge_dictionaries_three({ ""R"": ""Red"", ""B"": ""Black"", ""P"": ""Pink"" }, { ""G"": ""Green"", ""W"": ""White"" },{""L"":""lavender"",""B"":""Blue""})=={'W': 'White', 'P': 'Pink', 'B': 'Black', 'R': 'Red', 'G': 'Green', 'L': 'lavender'}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.8671875,llm,3,tree_search,mbpp_87,1543714304,158,102,1,3,573,260,2581090316288
+mbpp_88,mbpp,tree_search,"from collections import Counter
+
+def freq_count(arr):
+    # Count occurrences of each element in the array
+    return dict(Counter(arr))",True,True,,0.8515625,llm,3,tree_search,mbpp_88,1543714304,149,99,1,3,521,248,2383494885376
+mbpp_89,mbpp,tree_search,"def closest_num(n):
+    return n // 2 if n % 2 == 0 else n - 1",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpr3yg8uq9.py"", line 6, in <module>
+    assert closest_num(12) == 11
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.5,llm,3,tree_search,mbpp_89,1543714304,74,111,1,3,315,185,1552976589824
+mbpp_90,mbpp,tree_search,"def len_log(words):
+    return max([len(word) for word in words])",True,True,,0.8515625,llm,3,tree_search,mbpp_90,1543714304,78,66,1,3,298,144,1373905730560
+mbpp_91,mbpp,tree_search,"def find_substring(lst, sub):
+    return any(sub in s for s in lst)",True,True,,0.87890625,llm,3,tree_search,mbpp_91,1543714304,94,75,1,3,355,169,1627074876416
+mbpp_92,mbpp,tree_search,"def is_undulating(num):
+    return str(num)[::2] + str(num)[1::2] == '0'*len(str(num))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp9pxpr73o.py"", line 4, in <module>
+    assert is_undulating(1212121) == True
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.5625,llm,6,tree_search,mbpp_92,1543714304,82,162,1,6,770,244,3149177180160
+mbpp_93,mbpp,tree_search,"def power(a, b):
+    return a**b",True,True,,0.9140625,llm,3,tree_search,mbpp_93,1543714304,79,51,1,3,288,130,1299807443968
+mbpp_94,mbpp,tree_search,"def index_minimum(lst):
+    return min(range(len(lst)), key=lambda i: lst[i][1])[0]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpif0f2b17.py"", line 4, in <module>
+    assert index_minimum([('Rash', 143), ('Manjeet', 200), ('Varsha', 100)]) == 'Varsha'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpif0f2b17.py"", line 2, in index_minimum
+    return min(range(len(lst)), key=lambda i: lst[i][1])[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'int' object is not subscriptable",0.65234375,llm,3,tree_search,mbpp_94,1543714304,110,84,1,3,411,194,1877156593664
+mbpp_95,mbpp,tree_search,"def Find_Min_Length(lists):
+    return min([len(lst) for lst in lists])",True,True,,0.8359375,llm,3,tree_search,mbpp_95,1543714304,83,75,1,3,321,158,1488140589056
+mbpp_96,mbpp,tree_search,"def divisor(n):
+    count = 0
+    for i in range(1, int(n**0.5) + 1):
+        if n % i == 0:
+            if i * i == n: 
+                count += 1
+            else:
+                count += 2
+    return count",True,True,,0.62109375,llm,12,tree_search,mbpp_96,1543714304,76,405,1,12,1661,481,6650321221632
+mbpp_97,mbpp,tree_search,"from collections import defaultdict
+
+def frequency_lists(lists):
+    d = defaultdict(int)
+    for l in lists:
+        for n in l:
+            d[n] += 1
+    return dict(d)",True,True,,0.8515625,llm,12,tree_search,mbpp_97,1543714304,166,480,1,12,2667,646,10265700121600
+mbpp_98,mbpp,tree_search,"def multiply_num(nums):
+    product = 1
+    for num in nums:
+        product *= num
+    return product / len(nums)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpxycevsor.py"", line 7, in <module>
+    assert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2, rel_tol=0.001)
+           ^^^^
+NameError: name 'math' is not defined. Did you forget to import 'math'?",0.73046875,llm,3,tree_search,mbpp_98,1543714304,108,102,1,3,417,210,1945080023040
+mbpp_99,mbpp,tree_search,"def decimal_to_binary(decimal):
+    return bin(decimal)[2:]  # Convert to binary and remove the prefix '0b'",True,True,,0.77734375,llm,3,tree_search,mbpp_99,1543714304,88,93,1,3,328,181,1580763447296
+mbpp_100,mbpp,tree_search,"def next_smallest_palindrome(n):
+    while True:
+        n += 1
+        if str(n) == str(n)[::-1]:
+            return n",True,True,,0.5,llm,3,tree_search,mbpp_100,1543714304,83,120,1,3,371,203,1781446306816
+mbpp_101,mbpp,tree_search,"from typing import List
+
+def kth_element(arr: List[int], k: int) -> int:
+    return arr[k-1]",True,True,,0.62109375,llm,3,tree_search,mbpp_101,1543714304,93,99,1,3,365,192,1728960020480
+mbpp_102,mbpp,tree_search,"def snake_to_camel(snake_str):
+    components = snake_str.split('_')
+    return ''.join(x.capitalize() or '' for x in components)",True,True,,0.796875,llm,3,tree_search,mbpp_102,1543714304,78,108,1,3,329,186,1599288018944
+mbpp_103,mbpp,tree_search,"def eulerian_num(n, m):
+    dp = [[0] * (m + 1) for _ in range(n + 1)]
+    for i in range(m + 1):
+        dp[0][i] = 1
+    for i in range(1, n + 1):
+        for j in range(min(i, m) + 1):
+            if j > 0:
+                dp[i][j] += dp[i - 1][j]
+            if j < min(i, m):
+                dp[i][j] += dp[i - 1][j - 1]
+    return dp[n][m]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpv_hh1sjt.py"", line 13, in <module>
+    assert eulerian_num(3, 1) == 4
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.53125,llm,12,tree_search,mbpp_103,1543714304,78,480,1,12,2101,558,8246521811968
+mbpp_104,mbpp,tree_search,"def sort_sublists(lst):
+    return [sorted(sublist) for sublist in lst]",True,True,,0.75390625,llm,3,tree_search,mbpp_104,1543714304,115,69,1,3,414,184,1855544593408
+mbpp_105,mbpp,tree_search,"def count(lst):
+    return lst.count(True)",True,True,,0.6796875,llm,3,tree_search,mbpp_105,1543714304,75,57,1,3,274,132,1262758300672
+mbpp_106,mbpp,tree_search,"def add_lists(lst, tpl):
+    return (*tpl, *lst)",True,True,,0.77734375,llm,3,tree_search,mbpp_106,1543714304,100,72,1,3,360,172,1651774305280
+mbpp_108,mbpp,tree_search,"def merge_sorted_list(list1, list2, list3):
+    return sorted(list1 + list2 + list3)",True,True,,0.70703125,llm,21,tree_search,mbpp_108,1543714304,212,840,1,21,6713,1052,24038719141888
+mbpp_109,mbpp,tree_search,"def odd_Equivalent(binary_string, n):
+    count = 0
+    for _ in range(n+1):
+        if int(binary_string) % 2 != 0:
+            count += 1
+        binary_string = binary_string[1:]+binary_string[:1]
+    return count",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpgfqn5563.py"", line 9, in <module>
+    assert odd_Equivalent(""011001"",6) == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.26953125,llm,9,tree_search,mbpp_109,1543714304,94,339,1,9,1364,433,5575896066048
+mbpp_111,mbpp,tree_search,"def common_in_nested_lists(nested):
+    return set.intersection(*map(set, nested))",True,True,,0.796875,llm,3,tree_search,mbpp_111,1543714304,144,120,1,3,534,264,2473030315008
+mbpp_113,mbpp,tree_search,"import re
+
+def check_integer(s):
+    return bool(re.match(r'^-?\d+$', s))",True,True,,0.8515625,llm,3,tree_search,mbpp_113,1543714304,72,87,1,3,301,159,1429479445504
+mbpp_115,mbpp,tree_search,"def is_all_empty(dicts):
+    return all(not d for d in dicts)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpvqv3hmx0.py"", line 4, in <module>
+    assert empty_dit([{},{},{}])==True
+           ^^^^^^^^^
+NameError: name 'empty_dit' is not defined",0.77734375,llm,3,tree_search,mbpp_115,1543714304,77,66,1,3,296,143,1364643444736
+mbpp_116,mbpp,tree_search,"def tuple_to_int(t):
+    return int(''.join(map(str, t)))",True,True,,0.89453125,llm,3,tree_search,mbpp_116,1543714304,81,75,1,3,312,156,1454178874368
+mbpp_117,mbpp,tree_search,"def list_to_float(lst):
+    return [[float(i) if ""."" not in i else float(i.split(""."")[0]), j] for i, j in lst]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpv7qpla7j.py"", line 4, in <module>
+    assert list_to_float( [(""3"", ""4""), (""1"", ""26.45""), (""7.32"", ""8""), (""4"", ""8"")] ) == [(3.0, 4.0), (1.0, 26.45), (7.32, 8.0), (4.0, 8.0)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.59375,llm,3,tree_search,mbpp_117,1543714304,149,120,1,3,565,269,2584177744896
+mbpp_118,mbpp,tree_search,"def string_to_list(s):
+    return s.split()",True,True,,0.8359375,llm,3,tree_search,mbpp_118,1543714304,82,51,1,3,292,133,1321419444224
+mbpp_119,mbpp,tree_search,"def search(nums):
+    left = 0
+    right = len(nums) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if nums[mid] > nums[right]:
+            # Element is on the right side of mid.
+            left = mid + 1
+        else:
+            # Element is on the left side or at mid.
+            right = mid
+    return nums[left]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpxuixv4cz.py"", line 14, in <module>
+    assert search([1,1,2,2,3]) == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.349609375,llm,18,tree_search,mbpp_119,1543714304,84,558,1,18,2886,642,10948021843968
+mbpp_120,mbpp,tree_search,"def max_product_tuple(tuples):
+    return max([abs(x[0]*x[1]) for x in tuples])",True,True,,0.62109375,llm,12,tree_search,mbpp_120,1543714304,103,378,1,12,2080,481,7943953808384
+mbpp_123,mbpp,tree_search,"```python
+def amicable_numbers_sum(n):
+    def find_amicable(a):
+        s = set()
+        for b in range(int(a**0.5)+1, int((n/a)**0.5)+2 if (n-a)%a==0 else int((n/a)**0.5)):
+            if n % b == 0:
+                s.add(b)
+                s.add(int(a/b))
+        return sum(s) - n
+
+    ans = [find_amicable(i) for i in range(1, n+1)]
+    return sum(ans)",False,False,SyntaxError,0.3203125,llm,18,tree_search,mbpp_123,1543714304,81,720,1,18,3029,801,11880425283584
+mbpp_124,mbpp,tree_search,"from cmath import phase
+
+def angle_complex(real, imag):
+    return phase(complex(real, imag))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpmttrk8as.py"", line 6, in <module>
+    assert math.isclose(angle_complex(0,1j), 1.5707963267948966, rel_tol=0.001)
+           ^^^^
+NameError: name 'math' is not defined. Did you forget to import 'math'?",0.81640625,llm,3,tree_search,mbpp_124,1543714304,104,81,1,3,390,185,1784533735424
+mbpp_125,mbpp,tree_search,"def find_length(s):
+    max_diff = -1
+    zero_count = 0
+    one_count = 0
+    
+    for char in s:
+        if char == '0':
+            zero_count += 1
+        else:
+            one_count += 1
+        
+        current_diff = abs(zero_count - one_count)
+        
+        if current_diff > max_diff:
+            max_diff = current_diff
+    
+    return max_diff",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp8m8u7og6.py"", line 19, in <module>
+    assert find_length(""11000010001"") == 6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.65234375,llm,21,tree_search,mbpp_125,1543714304,101,618,1,21,3801,719,14020013308928
+mbpp_126,mbpp,tree_search,"```python
+from math import gcd
+
+def sum_of_common_divisors(a, b):
+    return sum(i for i in range(max(a,b)//gcd(a,b), min(a,b)+1,",False,False,SyntaxError,0.3203125,llm,6,tree_search,mbpp_126,1543714304,80,240,1,6,844,320,3612291471360
+mbpp_127,mbpp,tree_search,"def multiply_int(a, b):
+    return a * b",True,True,,0.92578125,llm,3,tree_search,mbpp_127,1543714304,72,54,1,3,270,126,1231884014592
+mbpp_128,mbpp,tree_search,"def long_words(n, words):
+    return [w for w in words if len(w) > n]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmprwtn1rgy.py"", line 4, in <module>
+    assert long_words(3,""python is a programming language"")==['python','programming','language']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.75390625,llm,3,tree_search,mbpp_128,1543714304,89,81,1,3,345,170,1599288018944
+mbpp_129,mbpp,tree_search,"```python
+def check_magic_square(matrix):
+    n = len(matrix)
+    sum_matrix = []
+    
+    # Calculate sums of rows and columns
+    for i in range(n):
+        row_sum = sum(row[i] for row in matrix)
+        col_sum = sum(matrix[j][i] for j in range(n))
+        sum_matrix.append([row_sum, col_sum])
+    
+    # Check if all sums are equal
+    return all(sum == sum_matrix[0][0] for sum in sum_matrix)
+
+# Test case
+assert check_magic_square([[7, 12,",False,False,SyntaxError,0.3203125,llm,15,tree_search,mbpp_129,1543714304,125,600,1,15,3205,725,12179905858560
+mbpp_130,mbpp,tree_search,"def max_occurrences(lst):
+    from collections import Counter
+    return Counter(lst).most_common(1)[0][0]",True,True,,0.81640625,llm,3,tree_search,mbpp_130,1543714304,114,93,1,3,433,207,1985216594944
+mbpp_131,mbpp,tree_search,"3
+def reverse_vowels(s: str) -> str:
+    vowels = 'aeiouAEIOU'
+    s_list = list(s)
+    i, j = 0, len(s) - 1
+    
+    while i < j:
+        if s[i] not in vowels:
+            i += 1
+        elif s[j] not in vowels:
+            j -= 1
+        else:
+            s_list[i], s_list[j] = s_list[j], s_list[i]
+            i, j = i + 1, j - 1
+            
+    return ''.join(s_list)
+
+# Test case
+assert reverse_vowels(""Python"") == ""Python""",True,True,,0.75390625,llm,27,tree_search,mbpp_131,1543714304,84,942,1,27,4971,1026,18598669934592
+mbpp_132,mbpp,tree_search,"def tup_string(t):
+    return ''.join(t)",True,True,,0.73046875,llm,3,tree_search,mbpp_132,1543714304,97,54,1,3,338,151,1519014875136
+mbpp_133,mbpp,tree_search,"def sum_negativenum(numbers):
+    return sum(num for num in numbers if num < 0)",True,True,,0.81640625,llm,3,tree_search,mbpp_133,1543714304,109,81,1,3,408,190,1855544593408
+mbpp_135,mbpp,tree_search,"import math
+
+def hexagonal_num(n):
+    return int(n * (2*n - 1))",True,True,,0.59375,llm,3,tree_search,mbpp_135,1543714304,75,78,1,3,295,153,1392430302208
+mbpp_137,mbpp,tree_search,"import numpy as np
+
+def zero_ratio(arr):
+    """"""
+    Calculates the ratio of zeroes to non-zero elements in the given array.
+    
+    Parameters:
+    arr (List[int]): The input array of integers.
+    
+    Returns:
+    float: The ratio of zeroes to non-zero elements in the array.
+    """"""
+    zeros = np.count_nonzero(np.array(arr))
+    non_zeros = len(arr) - zeros
+    return zeros / non_zeros if non_zeros != 0 else 0",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp0uhe1bgc.py"", line 17, in <module>
+    assert math.isclose(zero_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8]), 0.181818, rel_tol=0.001)
+           ^^^^
+NameError: name 'math' is not defined. Did you forget to import 'math'?",0.70703125,llm,9,tree_search,mbpp_137,1543714304,135,360,1,9,1882,495,7366604658688
+mbpp_138,mbpp,tree_search,"def is_Sum_Of_Powers_Of_Two(n):
+    power = 0
+    while n > 0:
+        if (n & 1) != 0:
+            return False
+        n >>= 1
+        power += 1
+    return True",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpg_q5tprn.py"", line 10, in <module>
+    assert is_Sum_Of_Powers_Of_Two(10) == True
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.46875,llm,6,tree_search,mbpp_138,1543714304,91,183,1,6,850,274,3488794327040
+mbpp_139,mbpp,tree_search,"import math
+
+def circle_circumference(radius):
+    return 2 * math.pi * radius",True,True,,0.8515625,llm,3,tree_search,mbpp_139,1543714304,104,78,1,3,387,182,1766009163776
+mbpp_140,mbpp,tree_search,"def extract_singly(lists):
+    return {num for sublist in lists for num in sublist}",True,True,,0.65234375,llm,3,tree_search,mbpp_140,1543714304,115,120,1,3,432,235,2068577167360
+mbpp_141,mbpp,tree_search,"def pancake_sort(arr):
+    for i in range(len(arr) - 1, 0, -1): 
+        # Find the index of the maximum element in arr[0:i+1]
+        max_index = arr.index(max(arr[:i+1]))
+        
+        if max_index != i: 
+            # Move the maximum element to the front of the unsorted portion
+            arr[:max_index + 1] = reversed(arr[:max_index + 1])
+            
+            # Move the maximum element to its correct position in the sorted portion
+            arr[:i+1] = reversed(arr[:i+1])
+            
+    return arr",True,True,,0.53125,llm,30,tree_search,mbpp_141,1543714304,106,1137,1,30,6452,1243,23850385996800
+mbpp_142,mbpp,tree_search,"def count_samepair(a, b, c):
+    return sum(x == y and x == z for x, y, z in zip(a, b, c))",True,True,,0.59375,llm,3,tree_search,mbpp_142,1543714304,124,120,1,3,492,244,2281609741312
+mbpp_143,mbpp,tree_search,"def find_lists(tup):
+    return len([x for x in tup if isinstance(x, list)])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpixqcps3o.py"", line 6, in <module>
+    assert find_lists(([9, 8, 7, 6, 5, 4, 3, 2, 1])) == 1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.77734375,llm,3,tree_search,mbpp_143,1543714304,95,81,1,3,363,176,1673386305536
+mbpp_145,mbpp,tree_search,"def max_Abs_Diff(arr):
+    # Find minimum and maximum values in the array
+    min_val = min(arr)
+    max_val = max(arr)
+    
+    # Calculate the maximum absolute difference
+    return abs(max_val - min_val)",True,True,,0.65234375,llm,6,tree_search,mbpp_145,1543714304,87,168,1,6,803,255,3285024038912
+mbpp_160,mbpp,tree_search,"from itertools import count
+
+def find_solution(a, b, n):
+    for x in count():
+        for y in count(x+1):
+            if a*x + b*y == n:
+                return (x, y)
+    return None",False,True,TimeoutExpired,0.5625,llm,6,tree_search,mbpp_160,1543714304,98,240,1,6,895,338,3825324045312
+mbpp_161,mbpp,tree_search,"def remove_elements(lst, vals):
+    return [x for x in lst if x not in vals]",True,True,,0.75390625,llm,3,tree_search,mbpp_161,1543714304,133,90,1,3,482,223,2185899454464
+mbpp_162,mbpp,tree_search,"def sum_series(n):
+    total_sum = 0
+    for i in range(n // 2 + 1):
+        total_sum += n - 2 * i
+    return total_sum",True,True,,0.5625,llm,9,tree_search,mbpp_162,1543714304,109,189,1,9,1390,298,5239366347776
+mbpp_163,mbpp,tree_search,"import math
+
+def area_polygon(n_sides, side_length):
+    """"""
+    Calculate the area of a regular polygon with n_sides and side length side_length.
+    
+    Parameters:
+    n_sides (int): Number of sides of the regular polygon.
+    side_length (float): Length of each side of the regular polygon.
+    
+    Returns:
+    float: The calculated area of the regular polygon.
+    """"""
+    return (n_sides * side_length ** 2) / (4 * math.tan(math.pi / n_sides))",True,True,,0.62109375,llm,9,tree_search,mbpp_163,1543714304,98,348,1,9,1582,446,6289092074496
+mbpp_164,mbpp,tree_search,"def are_equivalent(a, b):
+    def divisor_sum(n):
+        s = 0
+        for i in range(1, n + 1):
+            if n % i == 0:
+                s += i
+        return s
+    
+    return divisor_sum(a) == divisor_sum(b)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpk8g8pp8q.py"", line 13, in <module>
+    assert are_equivalent(23, 47) == True
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.59375,llm,9,tree_search,mbpp_164,1543714304,84,360,1,9,1333,444,5514147493888
+mbpp_165,mbpp,tree_search,"import re
+
+def count_char_position(s):
+    return len([c for c in s if re.match('^[a-z]', c.lower())])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp6n5885wq.py"", line 6, in <module>
+    assert count_char_position(""xbcefg"") == 2
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.59375,llm,9,tree_search,mbpp_165,1543714304,93,360,1,9,1555,453,6227343502336
+mbpp_166,mbpp,tree_search,"def find_even_pair(nums):
+    count = 0
+    for i in range(len(nums)):
+        for j in range(i+1, len(nums)):
+            if (nums[i] ^ nums[j]) % 2 == 0:
+                count += 1
+    return count",True,True,,0.65234375,llm,12,tree_search,mbpp_166,1543714304,94,366,1,12,1852,460,7175184084992
+mbpp_167,mbpp,tree_search,"import math
+
+def next_power_of_2(n):
+    return int(math.pow(2, math.ceil(math.log(n, 2))))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpggm22mls.py"", line 6, in <module>
+    assert next_power_of_2(0) == 1
+           ^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpggm22mls.py"", line 4, in next_power_of_2
+    return int(math.pow(2, math.ceil(math.log(n, 2))))
+                                     ^^^^^^^^^^^^^^
+ValueError: math domain error",0.62109375,llm,3,tree_search,mbpp_167,1543714304,82,120,1,3,353,202,1722785163264
+mbpp_168,mbpp,tree_search,"def frequency(lst, num):
+    return lst.count(num)",True,True,,0.796875,llm,3,tree_search,mbpp_168,1543714304,83,51,1,3,300,134,1349206301696
+mbpp_170,mbpp,tree_search,"def sum_range_list(nums, start_index, end_index):
+    return sum(nums[start_index:end_index+1])",True,True,,0.73046875,llm,3,tree_search,mbpp_170,1543714304,114,84,1,3,418,198,1911118308352
+mbpp_171,mbpp,tree_search,"def perimeter_pentagon(side_length):
+    return side_length * 5",True,True,,0.6796875,llm,3,tree_search,mbpp_171,1543714304,82,72,1,3,310,154,1441829159936
+mbpp_172,mbpp,tree_search,"def count_occurance(s):
+    return s.count('std')",True,True,,0.75390625,llm,3,tree_search,mbpp_172,1543714304,88,57,1,3,321,145,1448004017152
+mbpp_222,mbpp,tree_search,"def check_type(tup):
+    return all(isinstance(i, type(tup[0])) for i in tup)",True,True,,0.8359375,llm,3,tree_search,mbpp_222,1543714304,93,117,1,3,373,210,1809233164288
+mbpp_223,mbpp,tree_search,"def is_majority(arr, n, x):
+    count = arr[0]
+    for i in range(1, n):
+        if arr[i] != x:
+            count -= 1
+            if count < 0:
+                return False
+        else:
+            count += 1
+    return count > 0",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp6bqys7lm.py"", line 15, in <module>
+    assert is_majority([1, 1, 2, 2], 5, 1) == False
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmp6bqys7lm.py"", line 4, in is_majority
+    if arr[i] != x:
+       ~~~^^^
+IndexError: list index out of range",0.53125,llm,12,tree_search,mbpp_223,1543714304,134,444,1,12,2393,578,9209799537664
+mbpp_224,mbpp,tree_search,"def count_Set_Bits(n):
+    count = 0
+    while n:
+        if n & 1: 
+            count += 1
+        n >>= 1
+    return count",True,True,,0.81640625,llm,6,tree_search,mbpp_224,1543714304,86,138,1,6,774,224,3099778322432
+mbpp_226,mbpp,tree_search,"def odd_values_string(s):
+    return s[::2]",True,True,,0.8359375,llm,3,tree_search,mbpp_226,1543714304,80,120,1,3,314,200,1596200590336
+mbpp_227,mbpp,tree_search,"def min_of_three(a, b, c):
+    return min(a, b, c)",True,True,,0.9140625,llm,3,tree_search,mbpp_227,1543714304,75,99,1,3,314,174,1515927446528
+mbpp_228,mbpp,tree_search,"```python
+def all_Bits_Set_In_The_Given_Range(n, low, high):
+    return bin(n)[2:].count('1') + bin(high)[2:].count('",False,False,SyntaxError,0.1826171875,llm,3,tree_search,mbpp_228,1543714304,91,120,1,3,395,211,1880244022272
+mbpp_229,mbpp,tree_search,"def re_arrange_array(arr, n):
+    neg = [num for num in arr[:n] if num < 0]
+    pos = [num for num in arr[n:] if num > 0]
+    return neg + pos",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpihxgumte.py"", line 6, in <module>
+    assert re_arrange_array([-1, 2, -3, 4, 5, 6, -7, 8, 9], 9) == [-1, -3, -7, 4, 5, 6, 2, 8, 9]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.59375,llm,6,tree_search,mbpp_229,1543714304,163,165,1,6,1245,328,4875049772032
+mbpp_230,mbpp,tree_search,"def replace_blank(s, ch):
+    return s.replace(' ', ch)",True,True,,0.8671875,llm,3,tree_search,mbpp_230,1543714304,91,60,1,3,330,151,1494315446272
+mbpp_232,mbpp,tree_search,"from typing import List
+def larg_nnum(nums: List[int], n: int) -> List[int]:
+    return sorted(set(nums))[-n:]",True,True,,0.53125,llm,3,tree_search,mbpp_232,1543714304,138,108,1,3,502,246,2318658884608
+mbpp_233,mbpp,tree_search,"import math
+
+def lateralsuface_cylinder(r, h):
+    return 2 * math.pi * r * h",True,True,,0.70703125,llm,3,tree_search,mbpp_233,1543714304,110,93,1,3,420,203,1932730308608
+mbpp_234,mbpp,tree_search,"def volume_cube(side):
+    return side ** 3",True,True,,0.87890625,llm,3,tree_search,mbpp_234,1543714304,74,57,1,3,277,131,1268933157888
+mbpp_235,mbpp,tree_search,"def even_bit_set_number(n):
+    return n | (n - 1)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmppt7t464a.py"", line 4, in <module>
+    assert even_bit_set_number(10) == 10
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.75390625,llm,3,tree_search,mbpp_235,1543714304,78,66,1,3,299,144,1376993159168
+mbpp_237,mbpp,tree_search,"from collections import defaultdict
+
+def check_occurences(tuples_list):
+    occurences = defaultdict(int)
+    for t in tuples_list:
+        occurences[t] += 1
+    return dict(occurences)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpf6ws7i5g.py"", line 9, in <module>
+    assert check_occurences([(3, 1), (1, 3), (2, 5), (5, 2), (6, 3)] ) == {(1, 3): 2, (2, 5): 2, (3, 6): 1}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.75390625,llm,6,tree_search,mbpp_237,1543714304,144,156,1,6,1127,300,4424285195264
+mbpp_238,mbpp,tree_search,"def number_of_substrings(s):
+    return sum(i * (i + 1) // 2 for i in range(len(s) + 1))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpsexvcpgu.py"", line 4, in <module>
+    assert number_of_substrings(""abc"") == 6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.5625,llm,3,tree_search,mbpp_238,1543714304,80,111,1,3,340,191,1648686876672
+mbpp_239,mbpp,tree_search,"def get_total_number_of_sequences(m, n):
+    total = 0
+    for i in range(n + 1):
+        if (2 ** i <= m):
+            total += 1
+    return total",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpsd7kg5sg.py"", line 9, in <module>
+    assert get_total_number_of_sequences(5, 2) == 6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.46875,llm,9,tree_search,mbpp_239,1543714304,116,288,1,9,1559,404,6088409214976
+mbpp_240,mbpp,tree_search,"def replace_list(l1, l2):
+    return [l1.pop() for _ in range(len(l2))] + l2",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp17qt0bl8.py"", line 4, in <module>
+    assert replace_list([1, 3, 5, 7, 9, 10],[2, 4, 6, 8])==[1, 3, 5, 7, 9, 2, 4, 6, 8]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.53125,llm,3,tree_search,mbpp_240,1543714304,136,120,1,3,509,256,2371145170944
+mbpp_242,mbpp,tree_search,"def count_charac(s):
+    return len(s)",True,True,,0.9140625,llm,3,tree_search,mbpp_242,1543714304,75,48,1,3,273,123,1231884014592
+mbpp_244,mbpp,tree_search,"import math
+
+def next_Perfect_Square(num):
+    return int(math.pow((num+1)**0.5 + 0.5, 2))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpxx_4vt06.py"", line 6, in <module>
+    assert next_Perfect_Square(35) == 36
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.408203125,llm,3,tree_search,mbpp_244,1543714304,81,120,1,3,363,201,1750572020736
+mbpp_245,mbpp,tree_search,"```python
+def max_bitonic_subseq(arr):
+    n = len(arr)
+    inc = [1]*n # increase part length (length of longest strictly increasing prefix ending at i)
+    dec = [1]*n # decrease part length (length of longest strictly decreasing suffix starting at i)
+
+    ans = cur = arr[0] 
+    for i in range(1, n): # find maximum sum of bitonic subsequence ending with arr[i]
+        inc[i], cur = inc[i-1]+arr[i], max(cur, arr[i])
+        ans = max(ans, cur)
+    
+    cur = -float('inf')
+    for i in range(n-2, -1, -1): # find maximum sum of bitonic subsequence starting with arr[i",False,False,SyntaxError,0.3203125,llm,30,tree_search,mbpp_245,1543714304,132,1200,1,30,7340,1332,26866803746816
+mbpp_246,mbpp,tree_search,"def babylonian_squareroot(number):
+    guess = number / 2.0
+    while True:
+        better_guess = (guess + number / guess) / 2
+        if abs(guess - better_guess) < 0.0001:
+            break
+        guess = better_guess
+    return guess",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpn2gp4blm.py"", line 10, in <module>
+    assert math.isclose(babylonian_squareroot(10), 3.162277660168379, rel_tol=0.001)
+           ^^^^
+NameError: name 'math' is not defined. Did you forget to import 'math'?",0.6796875,llm,9,tree_search,mbpp_246,1543714304,109,327,1,9,1519,436,6063709786112
+mbpp_247,mbpp,tree_search,"def lps(s):
+    n = len(s)
+    dp = [[0]*n for _ in range(n)]
+    
+    for gap in range(1, n+1):
+        i = 0
+        while i + gap < n:
+            if s[i] == s[i + gap]:
+                dp[i][i + gap] = 2 + (dp[i + 1][i + gap - 1] if i + 1 < i + gap else 0)
+            else:
+                dp[i][i + gap] = max(dp[i + 1][i + gap], dp[i][i + gap - 1])
+            i += 1
+            
+    return dp[0][-1]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpd11yhocs.py"", line 16, in <module>
+    assert lps(""TENS FOR TENS"") == 5
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.5,llm,30,tree_search,mbpp_247,1543714304,85,1179,1,30,5910,1264,22241835692032
+mbpp_248,mbpp,tree_search,"import math
+
+def harmonic_sum(n):
+    return sum(1/d for d in range(1, n))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpyyq09zi_.py"", line 6, in <module>
+    assert math.isclose(harmonic_sum(7), 2.5928571428571425, rel_tol=0.001)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.53125,llm,3,tree_search,mbpp_248,1543714304,110,93,1,3,414,203,1914205736960
+mbpp_249,mbpp,tree_search,"def intersection_array(arr1, arr2):
+    return list(set(arr1) & set(arr2))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpnv1stwll.py"", line 4, in <module>
+    assert intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[1, 2, 4, 8, 9])==[1, 2, 8, 9]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.77734375,llm,3,tree_search,mbpp_249,1543714304,116,120,1,3,438,236,2090189167616
+mbpp_250,mbpp,tree_search,"def count_X(tup, x):
+    return tup.count(x)",True,True,,0.65234375,llm,3,tree_search,mbpp_250,1543714304,125,57,1,3,431,182,1901856022528
+mbpp_251,mbpp,tree_search,"def insert_element(lst, elem):
+    for i in range(len(lst)):
+        lst.insert(i + 1, elem)
+    return lst",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpeh44hn3q.py"", line 6, in <module>
+    assert insert_element(['Red', 'Green', 'Black'] ,'c')==['c', 'Red', 'c', 'Green', 'c', 'Black']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.53125,llm,3,tree_search,mbpp_251,1543714304,112,108,1,3,423,220,1994478880768
+mbpp_252,mbpp,tree_search,"import cmath
+
+def convert(c):
+    return abs(c), cmath.phase(c)",True,True,,0.6796875,llm,3,tree_search,mbpp_252,1543714304,79,90,1,3,311,169,1491228017664
+mbpp_253,mbpp,tree_search,"def count_integer(lst):
+    return sum(isinstance(x, int) for x in lst)",True,True,,0.77734375,llm,3,tree_search,mbpp_253,1543714304,84,78,1,3,324,162,1509752589312
+mbpp_255,mbpp,tree_search,"from itertools import product
+
+def combinations_colors(colors_list, n):
+    return list(product(*([colors_list] * n)))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp7v289_9_.py"", line 7, in <module>
+    assert combinations_colors( [""Red"",""Green"",""Blue""],2)==[('Red', 'Red'), ('Red', 'Green'), ('Red', 'Blue'), ('Green', 'Green'), ('Green', 'Blue'), ('Blue', 'Blue')]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.6796875,llm,3,tree_search,mbpp_255,1543714304,114,114,1,3,440,228,2071664595968
+mbpp_256,mbpp,tree_search,"def count_Primes_nums(n):
+    primes = [True for _ in range(n)]
+    p = 2
+    while (p * p <= n):
+        if (primes[p] == True):
+            for i in range(p * p, n, p):
+                primes[i] = False
+        p += 1
+
+    return sum(primes)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp8wvgfjd7.py"", line 12, in <module>
+    assert count_Primes_nums(5) == 2
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.4375,llm,9,tree_search,mbpp_256,1543714304,88,318,1,9,1346,406,5436961778688
+mbpp_257,mbpp,tree_search,"def swap_numbers(a, b):
+    return (b, a)",True,True,,0.8671875,llm,3,tree_search,mbpp_257,1543714304,90,69,1,3,332,159,1525189732352
+mbpp_259,mbpp,tree_search,"def maximize_elements(tup1, tup2):
+    return tuple(max(x, y) for x, y in zip(*tup1 + tup2))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp9mn9wxx9.py"", line 4, in <module>
+    assert maximize_elements(((1, 3), (4, 5), (2, 9), (1, 10)), ((6, 7), (3, 9), (1, 1), (7, 3))) == ((6, 7), (4, 9), (2, 9), (7, 10))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmp9mn9wxx9.py"", line 2, in maximize_elements
+    return tuple(max(x, y) for x, y in zip(*tup1 + tup2))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmp9mn9wxx9.py"", line 2, in <genexpr>
+    return tuple(max(x, y) for x, y in zip(*tup1 + tup2))
+                               ^^^^
+ValueError: too many values to unpack (expected 2)",0.59375,llm,6,tree_search,mbpp_259,1543714304,139,240,1,6,1183,379,4841088057344
+mbpp_260,mbpp,tree_search,"```python
+import math
+
+def is_newman_prime(n):
+    if n < 1:
+        return False
+    num = str(int(math.pow(10, n-1)))",False,False,SyntaxError,0.376953125,llm,3,tree_search,mbpp_260,1543714304,79,120,1,3,338,199,1667211448320
+mbpp_261,mbpp,tree_search,"def division_elements(tup1, tup2):
+    return tuple(x / y for x, y in zip(tup1, tup2))",True,True,,0.75390625,llm,3,tree_search,mbpp_261,1543714304,111,105,1,3,433,216,2013003452416
+mbpp_262,mbpp,tree_search,"def split_two_parts(lst, L):
+    return (lst[:L], lst[L:])",True,True,,0.62109375,llm,3,tree_search,mbpp_262,1543714304,140,69,1,3,486,209,2155025168384
+mbpp_264,mbpp,tree_search,"def dog_age(years):
+    return 24 + (years - 2) * 4",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp4y0efq23.py"", line 4, in <module>
+    assert dog_age(12)==61
+           ^^^^^^^^^^^^^^^
+AssertionError",0.4375,llm,3,tree_search,mbpp_264,1543714304,74,81,1,3,292,155,1389342873600
+mbpp_265,mbpp,tree_search,"def list_split(lst, n):
+    return [lst[i::n] for i in range(n)]",True,True,,0.6796875,llm,3,tree_search,mbpp_265,1543714304,169,78,1,3,585,247,2578002887680
+mbpp_266,mbpp,tree_search,"def lateralsurface_cube(side_length):
+    return 4 * (side_length ** 2)",True,True,,0.62109375,llm,3,tree_search,mbpp_266,1543714304,79,75,1,3,306,154,1429479445504
+mbpp_267,mbpp,tree_search,"def square_Sum(n):
+    return sum([i**2 for i in range(1, 2*n+1, 2)])",True,True,,0.796875,llm,3,tree_search,mbpp_267,1543714304,87,120,1,3,367,207,1781446306816
+mbpp_268,mbpp,tree_search,"def find_star_num(n):
+    return ((n * (8 * n - 6)) // 2)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpafa8kj14.py"", line 4, in <module>
+    assert find_star_num(3) == 37
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.59375,llm,3,tree_search,mbpp_268,1543714304,74,120,1,3,326,194,1614725161984
+mbpp_269,mbpp,tree_search,"def ascii_value(char):
+    return ord(char)",True,True,,0.8359375,llm,3,tree_search,mbpp_269,1543714304,71,45,1,3,258,116,1163960585216
+mbpp_270,mbpp,tree_search,"def sum_even_and_even_index(arr):
+    total = 0
+    for i in range(0, len(arr), 2): 
+        if arr[i] % 2 == 0: 
+            total += arr[i]
+    return total",True,True,,0.65234375,llm,6,tree_search,mbpp_270,1543714304,99,171,1,6,885,270,3584504613888
+mbpp_271,mbpp,tree_search,"def even_Power_Sum(n):
+    return sum(i**5 for i in range(2, n+1, 2))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpe2x34stl.py"", line 4, in <module>
+    assert even_Power_Sum(2) == 1056
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.75390625,llm,3,tree_search,mbpp_271,1543714304,95,114,1,3,393,209,1867894307840
+mbpp_272,mbpp,tree_search,"def rear_extract(lst):
+    return [t[-1] for t in lst]",True,True,,0.8359375,llm,3,tree_search,mbpp_272,1543714304,122,66,1,3,429,188,1914205736960
+mbpp_273,mbpp,tree_search,"def substract_elements(a, b):
+    return tuple(x - y for x, y in zip(a, b))",True,True,,0.75390625,llm,3,tree_search,mbpp_273,1543714304,115,99,1,3,433,214,2006828595200
+mbpp_274,mbpp,tree_search,"```python
+from math import comb
+
+def even_binomial_Coeff_Sum(n):
+    return sum(comb(n, i) for i in range(0, n+1, 2))",False,False,SyntaxError,0.5,llm,3,tree_search,mbpp_274,1543714304,87,120,1,3,382,207,1827757735936
+mbpp_276,mbpp,tree_search,"import math
+
+def volume_cylinder(radius, height):
+    return math.pi * (radius ** 2) * height",True,True,,0.8359375,llm,3,tree_search,mbpp_276,1543714304,112,90,1,3,421,202,1932730308608
+mbpp_277,mbpp,tree_search,"def dict_filter(dictionary, n):
+    return {key: value for key, value in dictionary.items() if value >= n}",True,True,,0.8515625,llm,3,tree_search,mbpp_277,1543714304,161,93,1,3,573,254,2562565744640
+mbpp_278,mbpp,tree_search,"def count_first_elements(t):
+    # Initialize a counter for elements preceding tuples
+    count = 0
+    
+    # Iterate through the tuple
+    for elem in t:
+        if isinstance(elem, int) and not isinstance(elem, bool):  # Check if the element is an integer and not boolean
+            break  # Exit loop as soon as a non-tuple element is found
+        else:
+            count += 1  # Increment count for every integer preceding a tuple element
+    
+    return count",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp9g0729sc.py"", line 14, in <module>
+    assert count_first_elements((1, 5, 7, (4, 6), 10) ) == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.62109375,llm,12,tree_search,mbpp_278,1543714304,98,366,1,12,1996,464,7632123518976
+mbpp_279,mbpp,tree_search,"def n_th_decagonal_number(n):
+    return (3 * n**2 - n) // 2",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmppypyh014.py"", line 4, in <module>
+    assert is_num_decagonal(3) == 27
+           ^^^^^^^^^^^^^^^^
+NameError: name 'is_num_decagonal' is not defined",0.65234375,llm,3,tree_search,mbpp_279,1543714304,74,93,1,3,309,167,1478878303232
+mbpp_280,mbpp,tree_search,"def sequential_search(arr, x):
+    for i in range(len(arr)):
+        if arr[i] == x:
+            return True, i
+    return False, -1",True,True,,0.70703125,llm,3,tree_search,mbpp_280,1543714304,139,120,1,3,536,259,2463768029184
+mbpp_281,mbpp,tree_search,"def all_unique(lst):
+    return len(set(lst)) == len(lst)",True,True,,0.8359375,llm,3,tree_search,mbpp_281,1543714304,81,60,1,3,303,141,1380080587776
+mbpp_282,mbpp,tree_search,"def sub_list(a, b):
+    return [x - y for x, y in zip(a, b)]",True,True,,0.8515625,llm,3,tree_search,mbpp_282,1543714304,86,96,1,3,347,182,1642512019456
+mbpp_283,mbpp,tree_search,"def validate(n):
+    digits = str(n)
+    for d in set(digits):
+        if digits.count(d) > int(d):
+            return False
+    return True",True,True,,0.5,llm,9,tree_search,mbpp_283,1543714304,90,330,1,9,1372,420,5560458923008
+mbpp_284,mbpp,tree_search,"def check_element(lst, elem):
+    return len(set(lst)) <= 1",True,True,,0.62109375,llm,3,tree_search,mbpp_284,1543714304,95,66,1,3,351,161,1590025733120
+mbpp_285,mbpp,tree_search,"import re
+
+def text_match_two_three(s):
+    return bool(re.search(r""ab{2,3}"", s))",True,True,,0.65234375,llm,3,tree_search,mbpp_285,1543714304,86,90,1,3,345,176,1617812590592
+mbpp_286,mbpp,tree_search,"def max_sub_array_sum_repeated(arr, k, n):
+    arr = [-x for x in arr]
+    dp = [float('-inf')] * (len(arr) + n)
+    prefix = [0] * len(dp)
+
+    # Calculate prefix sums and dynamic programming table
+    for i in range(len(prefix)):
+        for j in range(n):
+            if i + j < len(dp):
+                prefix[i] += arr[j]
+                dp[i + j] = max(dp[i + j], prefix[i])
+    
+    return max(dp)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpg9u_hwsm.py"", line 15, in <module>
+    assert max_sub_array_sum_repeated([10, 20, -30, -1], 4, 3) == 30
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.4375,llm,27,tree_search,mbpp_286,1543714304,110,1080,1,27,5805,1190,21679923685376
+mbpp_287,mbpp,tree_search,"def square_sum(n):
+    return sum([i**2 for i in range(1, n+1)*2 if i%2==0])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpgmmqxum9.py"", line 4, in <module>
+    assert square_Sum(2) == 20
+           ^^^^^^^^^^
+NameError: name 'square_Sum' is not defined. Did you mean: 'square_sum'?",0.5,llm,3,tree_search,mbpp_287,1543714304,84,120,1,3,367,204,1772184020992
+mbpp_290,mbpp,tree_search,"def max_length(lst):
+    return (len(max(lst, key=len)), list(max(lst, key=len)))",True,True,,0.62109375,llm,3,tree_search,mbpp_290,1543714304,119,120,1,3,461,239,2170462311424
+mbpp_291,mbpp,tree_search,"def count_no_of_ways(n, k):
+    # Dynamic programming table where dp[i][j] represents 
+    # number of ways to paint i posts such that last post has j different colors
+    dp = [[0]*k for _ in range(n+1)]
+    
+    # Base case: 1 way to paint 0 posts
+    dp[0][0] = 1
+    
+    # Fill the DP table
+    for i in range(1, n+1):
+        for prev_color in range(k):
+            for curr_color in range(k):
+                if prev_color != curr_color:
+                    dp[i][curr_color] += dp[i-1][prev_color]
+                    
+    return sum(dp[n])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpa10yxbq9.py"", line 18, in <module>
+    assert count_no_of_ways(2, 4) == 16
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.53125,llm,18,tree_search,mbpp_291,1543714304,104,720,1,18,3917,824,14693072745472
+mbpp_292,mbpp,tree_search,"from math import floor
+
+def find(num1, num2):
+    return floor(num1 / num2)",True,True,,0.92578125,llm,3,tree_search,mbpp_292,1543714304,80,81,1,3,307,161,1454178874368
+mbpp_293,mbpp,tree_search,"import math
+
+def otherside_rightangle(a, b):
+    return math.sqrt(a**2 + b**2)",True,True,,0.81640625,llm,3,tree_search,mbpp_293,1543714304,92,99,1,3,370,191,1741309734912
+mbpp_294,mbpp,tree_search,"from typing import *
+from itertools import chain
+
+def max_val(lst: List[Any]) -> Any:
+    return max(chain.from_iterable(map(str, lst)))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp9sc7dk8d.py"", line 7, in <module>
+    assert max_val(['Python', 3, 2, 4, 5, 'version'])==5
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.59375,llm,3,tree_search,mbpp_294,1543714304,88,120,1,3,383,208,1833932593152
+mbpp_295,mbpp,tree_search,"def sum_div(n):
+    sum = 0
+    for i in range(1, n+1):
+        if n % i == 0:
+            sum += i
+    return sum",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpxfa1bijk.py"", line 8, in <module>
+    assert sum_div(8)==7
+           ^^^^^^^^^^^^^
+AssertionError",0.77734375,llm,12,tree_search,mbpp_295,1543714304,73,243,1,12,1480,316,5582070923264
+mbpp_296,mbpp,tree_search,"def get_Inv_Count(arr):
+    n = len(arr)
+    inv_count = 0
+    
+    for i in range(n):
+        for j in range(i+1,n):
+            if arr[i] > arr[j]:
+                inv_count += 1
+                
+    return inv_count",True,True,,0.53125,llm,12,tree_search,mbpp_296,1543714304,83,363,1,12,1723,446,6733681794048
+mbpp_297,mbpp,tree_search,"def flatten_list(lst):
+    return [item for sublist in lst for item in (sublist if isinstance(sublist, list) else [sublist])]",True,True,,0.65234375,llm,6,tree_search,mbpp_297,1543714304,174,153,1,6,1309,327,5069557774336
+mbpp_299,mbpp,tree_search,"from operator import itemgetter
+
+def max_aggregate(tuples):
+    # Sort tuples based on values in descending order
+    sorted_tuples = sorted(tuples, key=itemgetter(1), reverse=True)
+    
+    # Return the tuple with the maximum value
+    return sorted_tuples[0]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp6qrm59p9.py"", line 10, in <module>
+    assert max_aggregate([('Juan Whelan',90),('Sabah Colley',88),('Peter Nichols',7),('Juan Whelan',122),('Sabah Colley',84)])==('Juan Whelan', 212)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.73046875,llm,6,tree_search,mbpp_299,1543714304,121,240,1,6,1063,361,4415022909440
+mbpp_300,mbpp,tree_search,"from itertools import product
+
+def count_binary_seq(n):
+    # Generate all possible combinations of 0s and 1s of length 2n
+    combos = list(product([0, 1], repeat=2*n))
+    
+    # Initialize counter for valid sequences
+    count = 0
+    
+    # Iterate through each combination
+    for combo in combos:
+        # Check if the number of '1's in the first half equals the number of '1's in the second half
+        if sum(combo[:n]) == sum(combo[n:]):
+            count += 1
+            
+    return count",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpw4cjkjvm.py"", line 18, in <module>
+    assert math.isclose(count_binary_seq(1), 2.0, rel_tol=0.001)
+           ^^^^
+NameError: name 'math' is not defined. Did you forget to import 'math'?",0.5,llm,21,tree_search,mbpp_300,1543714304,107,840,1,21,4134,947,15752060758016
+mbpp_301,mbpp,tree_search,"def dict_depth(d):
+    max_depth = 0
+    for key in d:
+        if isinstance(d[key], dict):
+            cur_depth = 1 + dict_depth(d[key])
+            if cur_depth > max_depth: 
+                max_depth = cur_depth
+    return max_depth",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpmeylin8b.py"", line 10, in <module>
+    assert dict_depth({'a':1, 'b': {'c': {'d': {}}}})==4
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.59375,llm,6,tree_search,mbpp_301,1543714304,84,192,1,6,806,276,3359122325504
+mbpp_304,mbpp,tree_search,"def find_Element(arr, queries, k, n):
+    # Calculate the effective rotation point
+    r = (k - n % k + n) % n
+    
+    for q in queries:
+        if arr[r] <= arr[q]:
+            return arr[r]
+        else:
+            r += 1
+
+    return arr[n-1]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpnkhn609a.py"", line 13, in <module>
+    assert find_Element([1,2,3,4,5],[[0,2],[0,3]],2,1) == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpnkhn609a.py"", line 6, in find_Element
+    if arr[r] <= arr[q]:
+                 ~~~^^^
+TypeError: list indices must be integers or slices, not list",0.4375,llm,12,tree_search,mbpp_304,1543714304,97,426,1,12,1909,523,7545675517952
+mbpp_305,mbpp,tree_search,"def start_withp(words):
+    # Filter the list of words where the first character is 'p'
+    result = [word for word in words if word[0] == 'p']
+    # Return only the first two elements of the filtered list
+    return result[:2]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpi4jjil52.py"", line 7, in <module>
+    assert start_withp([""Python PHP"", ""Java JavaScript"", ""c c++""])==('Python', 'PHP')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.6796875,llm,6,tree_search,mbpp_305,1543714304,93,222,1,6,866,315,3664777757696
+mbpp_306,mbpp,tree_search,"from typing import List
+
+def max_sum_increasing_subseq(nums: List[int], n: int, k: int) -> int:
+    # Initialize dp array where dp[i] represents the maximum sum of increasing subsequence ending at i
+    dp = [nums[k]] + [-float('inf')] * (len(nums) - k)
+    
+    for i in range(k+1, len(dp)):
+        for j in range(i):
+            if nums[i] > nums[j]:
+                dp[i] = max(dp[i], dp[j] + nums[i])
+                
+    return max(dp)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmphdo_lhgr.py"", line 14, in <module>
+    assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 4, 6) == 11
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: max_sum_increasing_subseq() takes 3 positional arguments but 4 were given",0.5625,llm,21,tree_search,mbpp_306,1543714304,133,840,1,21,4756,973,17752714496000
+mbpp_307,mbpp,tree_search,"def colon_tuplex(t1, n1, n2):
+    return t1[:n1] + (n2,) * (len(t1)-n1)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpjp0wfryv.py"", line 4, in <module>
+    assert colon_tuplex((""HELLO"", 5, [], True) ,2,50)==(""HELLO"", 5, [50], True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.53125,llm,3,tree_search,mbpp_307,1543714304,96,120,1,3,392,216,1886418879488
+mbpp_308,mbpp,tree_search,"def large_product(lst1, lst2, n):
+    # Calculate all possible products
+    products = [a * b for a in lst1 for b in lst2]
+    
+    # Sort and slice the products to get the top n products
+    sorted_products = sorted(products)[::-1][:n]
+    
+    return sorted_products",True,True,,0.53125,llm,12,tree_search,mbpp_308,1543714304,127,462,1,12,2331,589,9052340678656
+mbpp_309,mbpp,tree_search,"def maximum(x, y):
+    return max(x, y)",True,True,,0.953125,llm,3,tree_search,mbpp_309,1543714304,75,84,1,3,289,159,1392430302208
+mbpp_310,mbpp,tree_search,"def string_to_tuple(s):
+    return tuple(s)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp1niy_blo.py"", line 4, in <module>
+    assert string_to_tuple(""python 3.0"")==('p', 'y', 't', 'h', 'o', 'n', '3', '.', '0')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.5625,llm,3,tree_search,mbpp_310,1543714304,101,51,1,3,350,152,1559151447040
+mbpp_311,mbpp,tree_search,"def set_left_most_unset_bit(n):
+    return n | (n - 1)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmphakv54yn.py"", line 4, in <module>
+    assert set_left_most_unset_bit(10) == 14
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.796875,llm,3,tree_search,mbpp_311,1543714304,77,120,1,3,332,197,1642512019456
+mbpp_312,mbpp,tree_search,"import math
+
+def volume_cone(radius, height):
+    return (1/3) * math.pi * radius**2 * height",True,True,,0.75390625,llm,3,tree_search,mbpp_312,1543714304,104,99,1,3,406,203,1889506308096
+mbpp_388,mbpp,tree_search,"def highest_Power_of_2(n):
+    return 2**(int((n-1).bit_length()))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpa_f5blo0.py"", line 4, in <module>
+    assert highest_Power_of_2(10) == 8
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.65234375,llm,3,tree_search,mbpp_388,1543714304,86,120,1,3,351,206,1728960020480
+mbpp_389,mbpp,tree_search,"```python
+def find_lucas(n):
+    if n < 0:
+        return None
+    elif n == 0 or n == 1:
+        return n
+    else:",False,False,SyntaxError,0.349609375,llm,3,tree_search,mbpp_389,1543714304,75,120,1,3,346,195,1679561162752
+mbpp_390,mbpp,tree_search,"def add_string(lst, fmt):
+    return [fmt.format(x) for x in lst]",True,True,,0.796875,llm,3,tree_search,mbpp_390,1543714304,102,75,1,3,376,177,1716610306048
+mbpp_391,mbpp,tree_search,"def convert_list_dictionary(keys, values):
+    return [{keys[i]: value} for i, value in enumerate(values)]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpyasuh7vn.py"", line 4, in <module>
+    assert convert_list_dictionary([""S001"", ""S002"", ""S003"", ""S004""],[""Adina Park"", ""Leyton Marsh"", ""Duncan Boyle"", ""Saim Richards""] ,[85, 98, 89, 92])==[{'S001': {'Adina Park': 85}}, {'S002': {'Leyton Marsh': 98}}, {'S003': {'Duncan Boyle': 89}}, {'S004': {'Saim Richards': 92}}]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: convert_list_dictionary() takes 2 positional arguments but 3 were given",0.65234375,llm,3,tree_search,mbpp_391,1543714304,191,120,1,3,668,311,3031854893056
+mbpp_392,mbpp,tree_search,"import math
+
+def get_max_sum(n):
+    dp = [0 for i in range(n+1)]
+    dp[0] = 0
+    dp[1] = 1
+    
+    for i in range(2, n+1):
+        temp = -math.inf
+        for j in range(1, int(math.sqrt(i)) + 1):
+            if i % j == 0:
+                temp = max(temp, dp[i // j])
+        dp[i] = temp + dp[i]
+    
+    return dp[-1]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpx5q6z382.py"", line 17, in <module>
+    assert get_max_sum(60) == 106
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.376953125,llm,21,tree_search,mbpp_392,1543714304,110,777,1,21,4170,887,15677962471424
+mbpp_393,mbpp,tree_search,"def max_length_list(lst):
+    return max(enumerate(lst), key=lambda x: len(x[1]))[1]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp90uau8j_.py"", line 4, in <module>
+    assert max_length_list([[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]])==(3, [13, 15, 17])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.59375,llm,3,tree_search,mbpp_393,1543714304,115,120,1,3,453,235,2133413168128
+mbpp_394,mbpp,tree_search,"def check_distinct(t):
+    return len(set(t)) == len(t)",True,True,,0.75390625,llm,3,tree_search,mbpp_394,1543714304,87,81,1,3,330,168,1546801732608
+mbpp_395,mbpp,tree_search,"def first_non_repeating_character(s):
+    from collections import Counter
+    
+    char_count = Counter(s)
+    
+    for char in s:
+        if char_count[char] == 1:
+            return char
+            
+    return None",True,True,,0.73046875,llm,12,tree_search,mbpp_395,1543714304,80,393,1,12,1712,473,6783080651776
+mbpp_396,mbpp,tree_search,"def check_char(s):
+    return s[0] == s[-1]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp3x9mtm81.py"", line 4, in <module>
+    assert check_char(""abba"") == ""Valid""
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.73046875,llm,3,tree_search,mbpp_396,1543714304,81,63,1,3,303,144,1389342873600
+mbpp_397,mbpp,tree_search,"import math
+
+def median_numbers(a, b, c):
+    nums = sorted([a, b, c])
+    return float(nums[1])",True,True,,0.59375,llm,3,tree_search,mbpp_397,1543714304,79,120,1,3,344,199,1685736019968
+mbpp_398,mbpp,tree_search,"def sum_of_digits(nums):
+    return sum(int(i) for i in nums)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpv52ovayc.py"", line 4, in <module>
+    assert sum_of_digits([10,2,56])==14
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.73046875,llm,3,tree_search,mbpp_398,1543714304,83,84,1,3,321,167,1515927446528
+mbpp_399,mbpp,tree_search,"def bitwise_xor(tup1, tup2):
+    return tuple(a ^ b for a, b in zip(tup1, tup2))",True,True,,0.73046875,llm,3,tree_search,mbpp_399,1543714304,109,102,1,3,418,211,1951254880256
+mbpp_400,mbpp,tree_search,"def extract_freq(lst):
+    return len(set(map(tuple, lst)))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp06d7mt8h.py"", line 4, in <module>
+    assert extract_freq([(3, 4), (1, 2), (4, 3), (5, 6)] ) == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.77734375,llm,6,tree_search,mbpp_400,1543714304,97,159,1,6,821,256,3343685182464
+mbpp_401,mbpp,tree_search,"def add_nested_tuples(tup1, tup2):
+    result = []
+    for i in range(len(tup1)):
+        result.append((tup1[i][0] + tup2[i][0], tup1[i][1] + tup2[i][1]))
+    return tuple(result)",True,True,,0.6796875,llm,9,tree_search,mbpp_401,1543714304,151,315,1,9,1880,466,7270894371840
+mbpp_404,mbpp,tree_search,"def minimum(a, b):
+    return min(a, b)",True,True,,0.95703125,llm,3,tree_search,mbpp_404,1543714304,73,84,1,3,293,157,1398605159424
+mbpp_405,mbpp,tree_search,"def check_tuple(tuple1, ele):
+    return ele in tuple1",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmplamje3s9.py"", line 4, in <module>
+    assert check_tuplex((""w"", 3, ""r"", ""e"", ""s"", ""o"", ""u"", ""r"", ""c"", ""e""),'r')==True
+           ^^^^^^^^^^^^
+NameError: name 'check_tuplex' is not defined. Did you mean: 'check_tuple'?",0.77734375,llm,3,tree_search,mbpp_405,1543714304,103,66,1,3,373,169,1682648591360
+mbpp_406,mbpp,tree_search,"def find_Parity(n):
+    return n % 2 != 0",True,True,,0.796875,llm,3,tree_search,mbpp_406,1543714304,77,66,1,3,295,143,1361556016128
+mbpp_407,mbpp,tree_search,"def rearrange_bigger(n):
+    s = list(str(n))
+    for i in range(len(s)-1, 0, -1):
+        if s[i-1] < s[i]:
+            j = i
+            while j < len(s) and int(s[j]) > int(s[i-1]):
+                j += 1
+            s[i-1], s[j-1] = s[j-1], s[i-1]
+            s[i:] = sorted(s[i:])
+            return int(''.join(s))
+    return -1",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp1ihme5vk.py"", line 14, in <module>
+    assert rearrange_bigger(10)==False
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.5,llm,12,tree_search,mbpp_407,1543714304,81,480,1,12,1938,561,7752533234688
+mbpp_408,mbpp,tree_search,"from heapq import nsmallest
+
+def k_smallest_pairs(nums1, nums2, k):
+    return list(nsmallest(k, zip(nums1, nums2)))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpc2_ot8xj.py"", line 6, in <module>
+    assert k_smallest_pairs([1,3,7],[2,4,6],2)==[[1, 2], [1, 4]]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.6796875,llm,15,tree_search,mbpp_408,1543714304,110,600,1,15,3208,710,12142856715264
+mbpp_409,mbpp,tree_search,"def min_product_tuple(tuples):
+    return min(x*y for x,y in tuples)",True,True,,0.6796875,llm,6,tree_search,mbpp_409,1543714304,100,240,1,6,942,340,3976608047104
+mbpp_410,mbpp,tree_search,"def min_val(lst):
+    return min([int(i) for i in lst if isinstance(i, int)])",True,True,,0.70703125,llm,3,tree_search,mbpp_410,1543714304,88,120,1,3,365,208,1778358878208
+mbpp_411,mbpp,tree_search,"def snake_to_camel(s):
+    return ''.join(word.capitalize() or '_' for word in s.split('_'))",True,True,,0.77734375,llm,3,tree_search,mbpp_411,1543714304,80,93,1,3,327,173,1552976589824
+mbpp_412,mbpp,tree_search,"def remove_odd(nums):
+    return [x for x in nums if not x % 2]",True,True,,0.8671875,llm,3,tree_search,mbpp_412,1543714304,78,75,1,3,306,153,1426392016896
+mbpp_413,mbpp,tree_search,"def extract_nth_element(lst, n):
+    return [x[0] for x in lst]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpznfsmxv1.py"", line 5, in <module>
+    assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] ,2)==[99, 96, 94, 98]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.53125,llm,3,tree_search,mbpp_413,1543714304,147,75,1,3,513,222,2278522312704
+mbpp_414,mbpp,tree_search,"def overlapping(seq1, seq2):
+    return any(x in seq2 for x in seq1)",True,True,,0.73046875,llm,3,tree_search,mbpp_414,1543714304,93,78,1,3,353,171,1627074876416
+mbpp_415,mbpp,tree_search,"from typing import List
+
+def max_Product(nums: List[int]) -> tuple:
+    max_product = float('-inf')
+    first_max, second_max = float('-inf'), float('-inf')
+
+    for num in nums:
+        if num > first_max:
+            second_max, first_max = first_max, num
+        elif num > second_max:
+            second_max = num
+
+        max_product = max(max_product, first_max * second_max)
+
+    return (first_max, second_max)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpyrpjlg6d.py"", line 17, in <module>
+    assert max_Product([1,2,3,4,7,0,8,4]) == (7,8)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.796875,llm,12,tree_search,mbpp_415,1543714304,95,435,1,12,2121,530,8221822383104
+mbpp_417,mbpp,tree_search,"def group_tuples(tuples_list):
+    # Extract unique elements from tuples and convert to set for uniqueness check
+    unique_elements = {item[0] for item in tuples_list}
+    
+    # Find all pairs where each pair's first element is in unique elements set
+    result_pairs = []
+    for tup in tuples_list:
+        if tup[0] in unique_elements:
+            result_pairs.append(tuple(sorted((tup[0], *tup[1:]))))
+            
+    return result_pairs",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpy88f6ojs.py"", line 13, in <module>
+    assert group_tuples([('x', 'y'), ('x', 'z'), ('w', 't')]) == [('x', 'y', 'z'), ('w', 't')]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.53125,llm,12,tree_search,mbpp_417,1543714304,103,480,1,12,2292,583,8913406391296
+mbpp_418,mbpp,tree_search,"def Find_Max(lst):
+    return max(lst, key=lambda x: len(x))",True,True,,0.73046875,llm,3,tree_search,mbpp_418,1543714304,92,66,1,3,331,158,1519014875136
+mbpp_419,mbpp,tree_search,"def round_and_sum(numbers):
+    rounded_numbers = [round(num) for num in numbers]
+    result = sum(rounded_numbers)
+    return result * len(rounded_numbers)",True,True,,0.73046875,llm,3,tree_search,mbpp_419,1543714304,142,120,1,3,525,262,2439068600320
+mbpp_420,mbpp,tree_search,"def cube_sum(n):
+    total = 0
+    for i in range(1, n+1):
+        even_num = (2*i)**3
+        total += even_num
+    return total",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpki6pcjq_.py"", line 8, in <module>
+    assert cube_Sum(2) == 72
+           ^^^^^^^^
+NameError: name 'cube_Sum' is not defined. Did you mean: 'cube_sum'?",0.46875,llm,9,tree_search,mbpp_420,1543714304,78,183,1,9,1128,261,4316225193984
+mbpp_421,mbpp,tree_search,"def concatenate_tuple(t):
+    return ''.join(map(str, t))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpzhfaatse.py"", line 4, in <module>
+    assert concatenate_tuple((""ID"", ""is"", 4, ""UTS"") ) == 'ID-is-4-UTS'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.70703125,llm,3,tree_search,mbpp_421,1543714304,91,120,1,3,349,211,1738222306304
+mbpp_422,mbpp,tree_search,"def find_Average_Of_Cube(n):
+    return sum([x**3 for x in range(1, n+1)]) / n",True,True,,0.75390625,llm,3,tree_search,mbpp_422,1543714304,82,105,1,3,347,187,1657949162496
+mbpp_424,mbpp,tree_search,"def extract_rear(strings):
+    return [s[-1] for s in strings]",True,True,,0.81640625,llm,3,tree_search,mbpp_424,1543714304,94,72,1,3,349,166,1599288018944
+mbpp_425,mbpp,tree_search,"def count_element_in_list(lst, el):
+    return sum(1 for sublist in lst if el in sublist)",True,True,,0.8515625,llm,3,tree_search,mbpp_425,1543714304,103,84,1,3,393,187,1799970878464
+mbpp_426,mbpp,tree_search,"def filter_oddnumbers(arr):
+    return [x for x in arr if x % 2 != 0]",True,True,,0.796875,llm,3,tree_search,mbpp_426,1543714304,105,84,1,3,396,189,1815408021504
+mbpp_427,mbpp,tree_search,"from datetime import datetime
+
+def change_date_format(date):
+    return date.strftime('%d-%m-%Y')",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpqosyvm_k.py"", line 6, in <module>
+    assert change_date_format(""2026-01-02"") == '02-01-2026'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpqosyvm_k.py"", line 4, in change_date_format
+    return date.strftime('%d-%m-%Y')
+           ^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'strftime'",0.70703125,llm,3,tree_search,mbpp_427,1543714304,98,81,1,3,366,179,1691910877184
+mbpp_428,mbpp,tree_search,"def shell_sort(arr):
+    n = len(arr)
+    gap = n // 2
+    
+    while gap > 0:
+        for i in range(gap, n):
+            temp = arr[i]
+            j = i
+            
+            while j >= gap and arr[j - gap] > temp:
+                arr[j] = arr[j - gap]
+                j -= gap
+            
+            arr[j] = temp
+        gap //= 2
+    return arr",True,True,,0.70703125,llm,21,tree_search,mbpp_428,1543714304,140,708,1,21,4712,848,17230939061248
+mbpp_429,mbpp,tree_search,"def and_tuples(t1, t2):
+    return tuple(min(x, y) for x, y in zip(t1, t2))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpo63eapfe.py"", line 4, in <module>
+    assert and_tuples((10, 4, 6, 9), (5, 2, 3, 3)) == (0, 0, 2, 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.62109375,llm,3,tree_search,mbpp_429,1543714304,108,120,1,3,432,228,2046965167104
+mbpp_430,mbpp,tree_search,"def parabola_directrix(a,b,c):
+    return -4*c/b**2",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpndvvaw3u.py"", line 4, in <module>
+    assert parabola_directrix(5,3,2)==-198
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.349609375,llm,3,tree_search,mbpp_430,1543714304,82,117,1,3,342,199,1679561162752
+mbpp_431,mbpp,tree_search,"def common_element(list1, list2):
+    return len(set(list1) & set(list2)) > 0",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpnhlou1i0.py"", line 5, in <module>
+    assert common_element([1,2,3,4,5], [6,7,8,9])==None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.8671875,llm,3,tree_search,mbpp_431,1543714304,96,90,1,3,376,186,1744397163520
+mbpp_432,mbpp,tree_search,"import math
+
+def median_trapezium(a, b, c):
+    # Calculate the semi-perimeter of the trapezium
+    s = (a + b + c) / 2
+    # Calculate the area using Heron's formula
+    A = math.sqrt(s * (s - a) * (s - b) * (s - c))
+    # The median is equal to the height times two
+    return 2 * A",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmppm9m1ulx.py"", line 11, in <module>
+    assert median_trapezium(15,25,35)==20
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.4375,llm,9,tree_search,mbpp_432,1543714304,84,360,1,9,1429,444,5810540640256
+mbpp_433,mbpp,tree_search,"def check_greater(arr, num):
+    return all(x < num for x in arr)",True,True,,0.5,llm,3,tree_search,mbpp_433,1543714304,93,96,1,3,353,189,1682648591360
+mbpp_434,mbpp,tree_search,"import re
+
+def text_match_one(text):
+    return bool(re.match(r'a(b*)', text))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp4lbpbk47.py"", line 6, in <module>
+    assert text_match_one(""ac"")==False
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.70703125,llm,3,tree_search,mbpp_434,1543714304,78,81,1,3,312,159,1463441160192
+mbpp_435,mbpp,tree_search,"def last_Digit(n):
+    return n % 10",True,True,,0.8671875,llm,3,tree_search,mbpp_435,1543714304,77,72,1,3,292,149,1370818301952
+mbpp_436,mbpp,tree_search,"def neg_nos(lst):
+    return [num for num in lst if num < 0]",True,True,,0.87890625,llm,3,tree_search,mbpp_436,1543714304,83,75,1,3,321,158,1488140589056
+mbpp_437,mbpp,tree_search,"def remove_odd(s):
+    return ''.join([i for i in s if not int(i) % 2])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmprhfyxwnj.py"", line 4, in <module>
+    assert remove_odd(""python"")==(""yhn"")
+           ^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmprhfyxwnj.py"", line 2, in remove_odd
+    return ''.join([i for i in s if not int(i) % 2])
+                                        ^^^^^^
+ValueError: invalid literal for int() with base 10: 'p'",0.77734375,llm,3,tree_search,mbpp_437,1543714304,72,99,1,3,299,171,1460353731584
+mbpp_438,mbpp,tree_search,"from collections import defaultdict
+
+def count_bidirectional(lst):
+    d = defaultdict(int)
+    for x, y in lst:
+        if x > y:
+            d[x, y] += 1
+        else:
+            d[y, x] += 1
+    return sum(v*(v-1)//2 for v in d.values())",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpo_ix0kwb.py"", line 12, in <module>
+    assert count_bidirectional([(5, 6), (1, 2), (6, 5), (9, 1), (6, 5), (2, 1)] ) == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.59375,llm,9,tree_search,mbpp_438,1543714304,105,357,1,9,1538,462,6202644073472
+mbpp_439,mbpp,tree_search,"def multiple_to_single(nums):
+    return int(''.join(map(str, nums)))",True,True,,0.89453125,llm,3,tree_search,mbpp_439,1543714304,88,66,1,3,330,154,1503577732096
+mbpp_440,mbpp,tree_search,"```python
+from collections import defaultdict
+
+def find_adverb_position(sentence):
+    words = sentence.split()
+    adverbs = ['very', 'quite', 'rather', 'even', 'just']
+    position = []
+    
+    for i, word in enumerate(words):
+        if word.lower() in adverbs:
+            position.append((i, len(word), word))
+    
+    return tuple(position)",False,False,SyntaxError,0.4375,llm,9,tree_search,mbpp_440,1543714304,93,360,1,9,1416,453,5798190925824
+mbpp_441,mbpp,tree_search,"def surfacearea_cube(side):
+    return 6 * side**2",True,True,,0.5625,llm,3,tree_search,mbpp_441,1543714304,77,66,1,3,294,143,1358468587520
+mbpp_442,mbpp,tree_search,"def positive_count(arr):
+    return sum(1 for x in arr if x > 0) / len(arr)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpo99rukc9.py"", line 4, in <module>
+    assert positive_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8])==0.54
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.75390625,llm,3,tree_search,mbpp_442,1543714304,113,120,1,3,438,233,2080926881792
+mbpp_443,mbpp,tree_search,"def largest_neg(nums):
+    return max(num for num in nums if num < 0)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpbxtxsv38.py"", line 4, in <module>
+    assert largest_neg([1,2,3,-4,-6]) == -6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.8359375,llm,3,tree_search,mbpp_443,1543714304,83,72,1,3,321,155,1478878303232
+mbpp_444,mbpp,tree_search,"def trim_tuple(tuple_list, k):
+    return [(x[:k] if len(x) > k else x) for x in tuple_list]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpzj_bxlpt.py"", line 4, in <module>
+    assert trim_tuple([(5, 3, 2, 1, 4), (3, 4, 9, 2, 1),(9, 1, 2, 3, 5), (4, 8, 2, 1, 7)], 2) == '[(2,), (9,), (2,), (2,)]'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.77734375,llm,3,tree_search,mbpp_444,1543714304,147,120,1,3,554,267,2544041172992
+mbpp_445,mbpp,tree_search,"def index_multiplication(tuple1, tuple2):
+    result = []
+    for i in range(len(tuple1)):
+        t1 = tuple1[i]
+        t2 = tuple2[i]
+        result.append(tuple(map(lambda x, y: x * y, t1, t2)))
+    return tuple(result)",True,True,,0.65234375,llm,6,tree_search,mbpp_445,1543714304,151,240,1,6,1243,391,5063382917120
+mbpp_446,mbpp,tree_search,"def count_Occurrence(lst1, lst2):
+    return sum(s in lst2 for s in lst1)",True,True,,0.73046875,llm,6,tree_search,mbpp_446,1543714304,99,216,1,6,898,315,3763575473152
+mbpp_447,mbpp,tree_search,"def cube_nums(nums):
+    return [num**3 for num in nums]",True,True,,0.796875,llm,3,tree_search,mbpp_447,1543714304,143,66,1,3,490,209,2167374882816
+mbpp_448,mbpp,tree_search,"```python
+def cal_sum(n):
+    def next_perrin(i):
+        if i <= 1:
+            return i - 1
+        else:
+            return next_perrin(i",False,False,SyntaxError,0.294921875,llm,6,tree_search,mbpp_448,1543714304,74,240,1,6,795,314,3442482897920
+mbpp_450,mbpp,tree_search,"def extract_string(values, n):
+    return [s[:n] for s in values]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpluoprrhj.py"", line 4, in <module>
+    assert extract_string(['Python', 'list', 'exercises', 'practice', 'solution'] ,8)==['practice', 'solution']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.75390625,llm,3,tree_search,mbpp_450,1543714304,96,78,1,3,359,174,1654861733888
+mbpp_451,mbpp,tree_search,"def remove_whitespaces(s):
+    return s.replace("" "", """")",True,True,,0.81640625,llm,3,tree_search,mbpp_451,1543714304,79,81,1,3,299,160,1426392016896
+mbpp_452,mbpp,tree_search,"def loss_amount(sale_price, cost_price):
+    return max(0, sale_price - cost_price)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp6rvl7uwu.py"", line 4, in <module>
+    assert loss_amount(1500,1200)==0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.90625,llm,3,tree_search,mbpp_452,1543714304,87,96,1,3,348,183,1648686876672
+mbpp_453,mbpp,tree_search,"def sumofFactors(n):
+    ans = 0
+    for i in range(1, n + 1): 
+        if n % i == 0 and i % 2 == 0:
+            ans += i
+    return ans",True,True,,0.5625,llm,9,tree_search,mbpp_453,1543714304,78,294,1,9,1228,372,4967672630272
+mbpp_454,mbpp,tree_search,"import re
+
+def text_match_wordz(s):
+    return bool(re.search(r'\b\w*z\b', s))",True,True,,0.81640625,llm,9,tree_search,mbpp_454,1543714304,73,297,1,9,1151,370,4723765770240
+mbpp_455,mbpp,tree_search,"def check_monthnumb_number(month):
+    return month in [1, 3, 5, 7, 8, 10, 12]",True,True,,0.3203125,llm,3,tree_search,mbpp_455,1543714304,79,120,1,3,356,199,1722785163264
+mbpp_456,mbpp,tree_search,"def reverse_string_list(lst):
+    return [s[::-1] for s in lst]",True,True,,0.77734375,llm,3,tree_search,mbpp_456,1543714304,110,69,1,3,396,179,1784533735424
+mbpp_457,mbpp,tree_search,"def Find_Min(lst):
+    return min(lst, key=len)",True,True,,0.62109375,llm,6,tree_search,mbpp_457,1543714304,83,210,1,6,765,293,3285024038912
+mbpp_458,mbpp,tree_search,"def rectangle_area(length, width):
+    return length * width",True,True,,0.89453125,llm,3,tree_search,mbpp_458,1543714304,75,54,1,3,279,129,1268933157888
+mbpp_459,mbpp,tree_search,"def remove_uppercase(s):
+    return ''.join([i for i in s if not i.isupper()])",True,True,,0.81640625,llm,3,tree_search,mbpp_459,1543714304,93,81,1,3,355,174,1642512019456
+mbpp_460,mbpp,tree_search,"def Extract(lst):
+    return [sublist[0] for sublist in lst]",True,True,,0.81640625,llm,3,tree_search,mbpp_460,1543714304,103,66,1,3,370,169,1673386305536
+mbpp_461,mbpp,tree_search,"def upper_ctr(s):
+    return sum(1 for c in s if c.isupper())",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpoqrren25.py"", line 4, in <module>
+    assert upper_ctr('PYthon') == 1
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.92578125,llm,3,tree_search,mbpp_461,1543714304,76,72,1,3,300,148,1392430302208
+mbpp_462,mbpp,tree_search,"from typing import List
+
+def combinations_list(nums: List[str]) -> List[List[str]]:
+    res = [[]]
+    for n in nums:
+        res += [curr + [n] for curr in res]
+    return res[:-1]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpj91s4i5d.py"", line 9, in <module>
+    assert combinations_list(['orange', 'red', 'green', 'blue'])==[[], ['orange'], ['red'], ['red', 'orange'], ['green'], ['green', 'orange'], ['green', 'red'], ['green', 'red', 'orange'], ['blue'], ['blue', 'orange'], ['blue', 'red'], ['blue', 'red', 'orange'], ['blue', 'green'], ['blue', 'green', 'orange'], ['blue', 'green', 'red'], ['blue', 'green', 'red', 'orange']]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.5625,llm,6,tree_search,mbpp_462,1543714304,181,183,1,6,1377,364,5393737778176
+mbpp_463,mbpp,tree_search,"from typing import List
+
+def max_subarray_product(nums: List[int]) -> int:
+    result = nums[0]
+    min_val = nums[0]
+    for i in range(1, len(nums)):
+        if nums[i] < 0:
+            temp = min_val
+            min_val = max(min_val * nums[i], nums[i])
+            result = max(result, temp * nums[i])
+        else:
+            min_val = min(min_val * nums[i], nums[i])
+            result = max(result, min_val)
+    return result",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmph0g91ybl.py"", line 16, in <module>
+    assert max_subarray_product([1, -2, -3, 0, 7, -8, -2]) == 112
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.6796875,llm,21,tree_search,mbpp_463,1543714304,97,822,1,21,3927,919,15026515035136
+mbpp_464,mbpp,tree_search,"def check_value(dct, val):
+    return len(set(dct.values())) == 1 and val in dct.values()",True,True,,0.5625,llm,3,tree_search,mbpp_464,1543714304,111,93,1,3,423,204,1945080023040
+mbpp_465,mbpp,tree_search,"def drop_empty(dictionary):
+    return {key: value for key, value in dictionary.items() if value != None}",True,True,,0.8359375,llm,3,tree_search,mbpp_465,1543714304,101,90,1,3,389,191,1799970878464
+mbpp_468,mbpp,tree_search,"from typing import List
+
+def max_product(nums: List[int]) -> int:
+    incl = excl = nums[0]
+    for x in nums[1:]:
+        incl_new = x * max(excl, incl)
+        excl_new = max(x, incl) * excl
+        incl, excl = incl_new, excl_new
+    return max(incl, excl)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpwj0vsvj3.py"", line 11, in <module>
+    assert max_product([3, 100, 4, 5, 150, 6]) == 3000
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.59375,llm,12,tree_search,mbpp_468,1543714304,103,480,1,12,2075,583,8243434383360
+mbpp_470,mbpp,tree_search,"def add_pairwise(tup):
+    return tuple(a + b for a, b in zip(tup, tup[1:]))",True,True,,0.70703125,llm,6,tree_search,mbpp_470,1543714304,104,159,1,6,884,263,3559805185024
+mbpp_471,mbpp,tree_search,"from functools import reduce
+
+def find_remainder(arr, n):
+    return reduce(lambda x,y: (x * y) % n, arr)",True,True,,0.65234375,llm,6,tree_search,mbpp_471,1543714304,100,237,1,6,948,337,3985870332928
+mbpp_472,mbpp,tree_search,"def check_Consecutive(nums):
+    return sorted(nums) == list(range(min(nums), max(nums)+1))",True,True,,0.73046875,llm,3,tree_search,mbpp_472,1543714304,84,93,1,3,331,177,1577676018688
+mbpp_473,mbpp,tree_search,"def tuple_intersection(tuple_list1, tuple_list2):
+    return {x for x in tuple_list1 if any(x in t for t in tuple_list2)}",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpfnx5kr18.py"", line 4, in <module>
+    assert tuple_intersection([(3, 4), (5, 6), (9, 10), (4, 5)] , [(5, 4), (3, 4), (6, 5), (9, 11)]) == {(4, 5), (3, 4), (5, 6)}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.6796875,llm,3,tree_search,mbpp_473,1543714304,144,120,1,3,548,264,2516254315520
+mbpp_474,mbpp,tree_search,"def replace_char(s, old, new):
+    return s.replace(old, new)",True,True,,0.796875,llm,3,tree_search,mbpp_474,1543714304,75,78,1,3,296,153,1395517730816
+mbpp_475,mbpp,tree_search,"def sort_counter(dct):
+    return sorted(dct.items(), key=lambda x: x[1])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpt9csnyt2.py"", line 4, in <module>
+    assert sort_counter({'Math':81, 'Physics':83, 'Chemistry':87})==[('Chemistry', 87), ('Physics', 83), ('Math', 81)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.73046875,llm,3,tree_search,mbpp_475,1543714304,107,81,1,3,395,188,1809233164288
+mbpp_476,mbpp,tree_search,"def big_sum(arr):
+    return max(arr) + min(arr)",True,True,,0.8671875,llm,3,tree_search,mbpp_476,1543714304,83,57,1,3,306,140,1386255444992
+mbpp_477,mbpp,tree_search,"def is_lower(s):
+    return s.lower()",True,True,,0.73046875,llm,3,tree_search,mbpp_477,1543714304,75,54,1,3,273,129,1250408586240
+mbpp_478,mbpp,tree_search,"def remove_lowercase(s):
+    return ''.join([i for i in s if not i.islower()])",True,True,,0.8671875,llm,3,tree_search,mbpp_478,1543714304,76,78,1,3,301,154,1414042302464
+mbpp_479,mbpp,tree_search,"def first_Digit(n):
+    return str(abs(int(n)))[0]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpyah292g4.py"", line 4, in <module>
+    assert first_Digit(123) == 1
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError",0.8515625,llm,3,tree_search,mbpp_479,1543714304,77,90,1,3,301,167,1454178874368

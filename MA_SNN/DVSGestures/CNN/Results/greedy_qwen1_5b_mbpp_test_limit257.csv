@@ -1,0 +1,1649 @@
+problem_id,dataset,strategy,code,passed,valid_ast,error,flops_strategy,flops_problem_id,flops_num_params,flops_prompt_tokens,flops_generated_tokens,flops_num_generations,flops_extra_forward_passes,flops_extra_forward_tokens,flops_total_tokens,flops_estimated_flops
+mbpp_11,mbpp,greedy,"def remove_Occ(s, ch):
+    i = 0
+    while s[i] != ch:
+        i += 1
+    j = len(s) - 1
+    while s[j] != ch:
+        j -= 1
+    return s[:i] + s[i+1:j] + s[j+1:]",True,True,,greedy,mbpp_11,1543714304,83,76,1,0,0,159,490901148672
+mbpp_12,mbpp,greedy,"def sort_matrix(matrix):
+    # Sort each row based on the sum of elements and then return the sorted matrix
+    return [[x for _, x in sorted(zip(sum(row), row))] for row in matrix]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp8wdrofor.py"", line 5, in <module>
+    assert sort_matrix([[1, 2, 3], [2, 4, 5], [1, 1, 1]])==[[1, 1, 1], [1, 2, 3], [2, 4, 5]]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmp8wdrofor.py"", line 3, in sort_matrix
+    return [[x for _, x in sorted(zip(sum(row), row))] for row in matrix]
+                                  ^^^^^^^^^^^^^^^^^^
+TypeError: 'int' object is not iterable",greedy,mbpp_12,1543714304,128,48,1,0,0,176,543387435008
+mbpp_14,mbpp,greedy,"def find_Volume(a, b, c):
+    return (a * b * c) / 6",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp3lh493ms.py"", line 4, in <module>
+    assert find_Volume(10,8,6) == 240
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_14,1543714304,81,28,1,0,0,109,336529718272
+mbpp_16,mbpp,greedy,"import re
+
+def is_text_lowercase_underscore(text):
+    return bool(re.match(r'^[a-z]+_[a-z]+$', text))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp13g2aec6.py"", line 6, in <module>
+    assert text_lowercase_underscore(""aab_cbbbc"")==(True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'text_lowercase_underscore' is not defined. Did you mean: 'is_text_lowercase_underscore'?",greedy,mbpp_16,1543714304,89,34,1,0,0,123,379753718784
+mbpp_17,mbpp,greedy,"def square_perimeter(side_length):
+    return 4 * side_length",True,True,,greedy,mbpp_17,1543714304,78,20,1,0,0,98,302568003584
+mbpp_18,mbpp,greedy,"def remove_dirty_chars(s1, s2):
+    return ''.join([c for c in s1 if c not in s2])",True,True,,greedy,mbpp_18,1543714304,87,33,1,0,0,120,370491432960
+mbpp_19,mbpp,greedy,"def has_duplicates(arr):
+    return len(set(arr)) != len(arr)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpo7wykm5s.py"", line 4, in <module>
+    assert test_duplicate(([1,2,3,4,5]))==False
+           ^^^^^^^^^^^^^^
+NameError: name 'test_duplicate' is not defined. Did you mean: 'has_duplicates'?",greedy,mbpp_19,1543714304,83,20,1,0,0,103,318005146624
+mbpp_20,mbpp,greedy,"def is_woodall(n):
+    return all((n % i != 0 for i in range(2, int(n**0.5)+1))) and n > 1",True,True,,greedy,mbpp_20,1543714304,78,44,1,0,0,122,376666290176
+mbpp_56,mbpp,greedy,"def check(n):
+    return str(n)[::-1] * 2 - n == 0",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpb077st2t.py"", line 4, in <module>
+    assert check(70) == False
+           ^^^^^^^^^
+  File ""/tmp/tmpb077st2t.py"", line 2, in check
+    return str(n)[::-1] * 2 - n == 0
+           ~~~~~~~~~~~~~~~~~^~~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'",greedy,mbpp_56,1543714304,77,26,1,0,0,103,318005146624
+mbpp_57,mbpp,greedy,"def find_Max_Num(digits):
+    # Sort the digits in descending order
+    sorted_digits = sorted(digits, reverse=True)
+    # Join the sorted digits to form the maximum number
+    return int(''.join(map(str, sorted_digits)))",True,True,,greedy,mbpp_57,1543714304,87,54,1,0,0,141,435327433728
+mbpp_58,mbpp,greedy,"def opposite_Signs(x, y):
+    return x * y < 0",True,True,,greedy,mbpp_58,1543714304,80,23,1,0,0,103,318005146624
+mbpp_59,mbpp,greedy,"def is_octagonal(n):
+    return (24 * n + 1)**0.5 % 1 == 0",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpp220ax32.py"", line 4, in <module>
+    assert is_octagonal(5) == 65
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_59,1543714304,73,32,1,0,0,105,324180003840
+mbpp_61,mbpp,greedy,"def count_Substrings(s):
+    n = len(s)
+    dp = [0] * (n + 1)
+    for i in range(1, n + 1):
+        dp[i] = dp[i - 1] + int(s[i - 1])
+    ans = 0
+    for i in range(n):
+        for j in range(i + 1, n + 1):
+            if dp[j] - dp[i] == j - i:
+                ans += 1
+    return ans",True,True,,greedy,mbpp_61,1543714304,87,114,1,0,0,201,620573150208
+mbpp_62,mbpp,greedy,"def smallest_num(nums):
+    return min(nums)",True,True,,greedy,mbpp_62,1543714304,88,15,1,0,0,103,318005146624
+mbpp_63,mbpp,greedy,"def max_difference(lst):
+    return max([abs(x[0] - y[1]) for x, y in lst])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpd0ftpa7e.py"", line 4, in <module>
+    assert max_difference([(3, 5), (1, 7), (10, 3), (1, 2)]) == 7
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpd0ftpa7e.py"", line 2, in max_difference
+    return max([abs(x[0] - y[1]) for x, y in lst])
+                    ~^^^
+TypeError: 'int' object is not subscriptable",greedy,mbpp_63,1543714304,99,31,1,0,0,130,401365719040
+mbpp_64,mbpp,greedy,"def subject_marks(tuples):
+    return sorted(tuples, key=lambda x: x[1])",True,True,,greedy,mbpp_64,1543714304,133,25,1,0,0,158,487813720064
+mbpp_65,mbpp,greedy,"def recursive_list_sum(lst):
+    total = 0
+    for i in lst:
+        if type(i) == list:
+            total += recursive_list_sum(i)
+        else:
+            total += i
+    return total",True,True,,greedy,mbpp_65,1543714304,87,51,1,0,0,138,426065147904
+mbpp_66,mbpp,greedy,"def pos_count(nums):
+    return sum(1 for num in nums if num > 0)",True,True,,greedy,mbpp_66,1543714304,81,25,1,0,0,106,327267432448
+mbpp_67,mbpp,greedy,"def bell_number(n):
+    # Initialize a list with size n+1 filled with 0s
+    dp = [0] * (n + 1)
+    
+    # Base case: there is one way to partition an empty set
+    dp[0] = 1
+    
+    # Fill the dp table using the recurrence relation
+    for i in range(1, n + 1):
+        for j in range(i, 0, -1):
+            dp[j] += dp[j - 1]
+    
+    return dp[n]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp3o4uwk8r.py"", line 15, in <module>
+    assert bell_number(2)==2
+           ^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_67,1543714304,75,118,1,0,0,193,595873721344
+mbpp_68,mbpp,greedy,"def is_Monotonic(A):
+    return all(x <= y for x, y in zip(A, A[1:])) or all(x >= y for x, y in zip(A, A[1:]))",True,True,,greedy,mbpp_68,1543714304,87,50,1,0,0,137,422977719296
+mbpp_69,mbpp,greedy,"def is_sublist(lst1, lst2):
+    return all(item in lst1 for item in lst2)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpvrdknweo.py"", line 4, in <module>
+    assert is_sublist([2,4,3,5,7],[3,7])==False
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_69,1543714304,86,28,1,0,0,114,351966861312
+mbpp_70,mbpp,greedy,"def get_equal(tuples):
+    return len(set(map(len, tuples))) <= 1",True,True,,greedy,mbpp_70,1543714304,96,24,1,0,0,120,370491432960
+mbpp_71,mbpp,greedy,"def comb_sort(arr):
+    n = len(arr)
+    gap = n
+    swapped = True
+
+    while gap != 1 or swapped:
+        gap //= 1.3
+        if gap < 1:
+            gap = 1
+        swapped = False
+
+        for i in range(0, n - gap):
+            if arr[i] > arr[i + gap]:
+                arr[i], arr[i + gap] = arr[i + gap], arr[i]
+                swapped = True",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp5q5oej8v.py"", line 17, in <module>
+    assert comb_sort([5, 15, 37, 25, 79]) == [5, 15, 25, 37, 79]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmp5q5oej8v.py"", line 12, in comb_sort
+    for i in range(0, n - gap):
+             ^^^^^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer",greedy,mbpp_71,1543714304,103,184,1,0,0,287,886092010496
+mbpp_72,mbpp,greedy,"def dif_Square(n):
+    return n % 2 != 0 and int((n**0.5)) ** 2 - (int((n**0.5) - 1)) ** 2 == n",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpu9zyhypb.py"", line 4, in <module>
+    assert dif_Square(5) == True
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_72,1543714304,82,52,1,0,0,134,413715433472
+mbpp_74,mbpp,greedy,"def is_samepatterns(patterns, strings):
+    return all([all([x == y for x, y in zip(p, s)]) for p, s in zip(patterns, strings)])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpbg656yh3.py"", line 4, in <module>
+    assert is_samepatterns([""red"",""green"",""green""], [""a"", ""b"", ""b""])==True
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_74,1543714304,89,44,1,0,0,133,410628004864
+mbpp_75,mbpp,greedy,"def find_tuples(tuples_list, divisor):
+    return [tup for tup in tuples_list if all(x % divisor == 0 for x in tup)]",True,True,,greedy,mbpp_75,1543714304,121,37,1,0,0,158,487813720064
+mbpp_77,mbpp,greedy,"def is_Diff(n):
+    return n % 11 != 0",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpcimbx9wg.py"", line 4, in <module>
+    assert is_Diff (12345) == False
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_77,1543714304,80,22,1,0,0,102,314917718016
+mbpp_79,mbpp,greedy,"def word_len(s):
+    return len(s) % 2 != 0",True,True,,greedy,mbpp_79,1543714304,77,22,1,0,0,99,305655432192
+mbpp_80,mbpp,greedy,"def tetrahedral_number(n):
+    return n * (n + 1) * (n + 2) // 6",True,True,,greedy,mbpp_80,1543714304,75,33,1,0,0,108,333442289664
+mbpp_82,mbpp,greedy,"import math
+
+def volume_sphere(radius):
+    return (4/3) * math.pi * radius**3",True,True,,greedy,mbpp_82,1543714304,100,28,1,0,0,128,395190861824
+mbpp_83,mbpp,greedy,"def get_Char(s):
+    return chr(sum(ord(c) for c in s) % 26)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp5pws_xru.py"", line 4, in <module>
+    assert get_Char(""abc"") == ""f""
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_83,1543714304,88,27,1,0,0,115,355054289920
+mbpp_84,mbpp,greedy,"def sequence(n):
+    if n <= 2:
+        return n - 1
+    else:
+        return sequence(sequence(n-1)) + sequence(n-2)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpe3z0wsuw.py"", line 7, in <module>
+    assert sequence(10) == 6
+           ^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_84,1543714304,76,40,1,0,0,116,358141718528
+mbpp_85,mbpp,greedy,"import math
+
+def surfacearea_sphere(radius):
+    return 4 * math.pi * radius ** 2",True,True,,greedy,mbpp_85,1543714304,103,27,1,0,0,130,401365719040
+mbpp_86,mbpp,greedy,"def centered_hexagonal_number(n):
+    return n * (2*n - 1)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp8q2b60kk.py"", line 4, in <module>
+    assert centered_hexagonal_number(10) == 271
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_86,1543714304,76,23,1,0,0,99,305655432192
+mbpp_87,mbpp,greedy,"def merge_dictionaries_three(dict1, dict2, dict3):
+    return {**dict1, **dict2, **dict3}",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpb0r042kk.py"", line 5, in <module>
+    assert merge_dictionaries_three({ ""R"": ""Red"", ""B"": ""Black"", ""P"": ""Pink"" }, { ""G"": ""Green"", ""W"": ""White"" },{""L"":""lavender"",""B"":""Blue""})=={'W': 'White', 'P': 'Pink', 'B': 'Black', 'R': 'Red', 'G': 'Green', 'L': 'lavender'}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_87,1543714304,158,34,1,0,0,192,592786292736
+mbpp_88,mbpp,greedy,"from collections import Counter
+
+def freq_count(lst):
+    return dict(Counter(lst))",True,True,,greedy,mbpp_88,1543714304,149,22,1,0,0,171,527950291968
+mbpp_89,mbpp,greedy,"import math
+
+def closest_num(n):
+    return int(math.sqrt(n))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp6ocq6zls.py"", line 6, in <module>
+    assert closest_num(11) == 10
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_89,1543714304,74,20,1,0,0,94,290218289152
+mbpp_90,mbpp,greedy,"def len_log(words):
+    return max(len(word) for word in words)",True,True,,greedy,mbpp_90,1543714304,78,21,1,0,0,99,305655432192
+mbpp_91,mbpp,greedy,"def find_substring(lst, s):
+    return any(s in sublist for sublist in lst)",True,True,,greedy,mbpp_91,1543714304,94,24,1,0,0,118,364316575744
+mbpp_92,mbpp,greedy,"def is_undulating(n):
+    s = str(n)
+    return len(set(s)) == 1 and '0' not in s",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmps2psaqkz.py"", line 5, in <module>
+    assert is_undulating(1212121) == True
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_92,1543714304,82,35,1,0,0,117,361229147136
+mbpp_93,mbpp,greedy,"def power(a, b):
+    return a ** b",True,True,,greedy,mbpp_93,1543714304,79,17,1,0,0,96,296393146368
+mbpp_94,mbpp,greedy,"def index_minimum(lst):
+    return min(range(len(lst)), key=lambda x: lst[x][1])[0]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpi0cx4xmg.py"", line 4, in <module>
+    assert index_minimum([('Rash', 143), ('Manjeet', 200), ('Varsha', 100)]) == 'Varsha'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpi0cx4xmg.py"", line 2, in index_minimum
+    return min(range(len(lst)), key=lambda x: lst[x][1])[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'int' object is not subscriptable",greedy,mbpp_94,1543714304,110,28,1,0,0,138,426065147904
+mbpp_95,mbpp,greedy,"def Find_Min_Length(lst):
+    return min([len(x) for x in lst])",True,True,,greedy,mbpp_95,1543714304,83,23,1,0,0,106,327267432448
+mbpp_96,mbpp,greedy,"def divisor(n):
+    count = 0
+    for i in range(1, int(n**0.5) + 1):
+        if n % i == 0:
+            if i * i == n:
+                count += 1
+            else:
+                count += 2
+    return count",True,True,,greedy,mbpp_96,1543714304,76,70,1,0,0,146,450764576768
+mbpp_97,mbpp,greedy,"from collections import defaultdict
+
+def frequency_lists(lists):
+    freq = defaultdict(int)
+    for sublist in lists:
+        for item in sublist:
+            freq[item] += 1
+    return dict(freq)",True,True,,greedy,mbpp_97,1543714304,166,47,1,0,0,213,657622293504
+mbpp_98,mbpp,greedy,"def multiply_num(nums):
+    return reduce(lambda x, y: x * y, nums) / len(nums)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpc0gk1_93.py"", line 4, in <module>
+    assert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2, rel_tol=0.001)
+           ^^^^
+NameError: name 'math' is not defined. Did you forget to import 'math'?",greedy,mbpp_98,1543714304,108,28,1,0,0,136,419890290688
+mbpp_99,mbpp,greedy,"def decimal_to_binary(n):
+    return bin(n)[2:]",True,True,,greedy,mbpp_99,1543714304,88,18,1,0,0,106,327267432448
+mbpp_100,mbpp,greedy,"def next_smallest_palindrome(n):
+    while True:
+        n += 1
+        if str(n) == str(n)[::-1]:
+            return n",True,True,,greedy,mbpp_100,1543714304,83,39,1,0,0,122,376666290176
+mbpp_101,mbpp,greedy,"def kth_element(arr, k):
+    return arr[k-1]",True,True,,greedy,mbpp_101,1543714304,93,20,1,0,0,113,348879432704
+mbpp_102,mbpp,greedy,"def snake_to_camel(snake_str):
+    return ''.join(word.capitalize() or '_' for word in snake_str.split('_'))",True,True,,greedy,mbpp_102,1543714304,78,31,1,0,0,109,336529718272
+mbpp_103,mbpp,greedy,"from math import comb
+
+def eulerian_num(n, m):
+    return sum(comb(n - i, m - 1) for i in range(m)) if n >= m else 0",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpv8_0jlsu.py"", line 6, in <module>
+    assert eulerian_num(3, 1) == 4
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_103,1543714304,78,45,1,0,0,123,379753718784
+mbpp_104,mbpp,greedy,"def sort_sublists(lst):
+    return [sorted(sublist) for sublist in lst]",True,True,,greedy,mbpp_104,1543714304,115,23,1,0,0,138,426065147904
+mbpp_105,mbpp,greedy,"def count(lst):
+    return lst.count(True)",True,True,,greedy,mbpp_105,1543714304,75,15,1,0,0,90,277868574720
+mbpp_106,mbpp,greedy,"def add_lists(lst, tpl):
+    return tpl + tuple(lst)",True,True,,greedy,mbpp_106,1543714304,100,19,1,0,0,119,367404004352
+mbpp_108,mbpp,greedy,"def merge_sorted_list(list1, list2, list3):
+    return sorted(list(set(list1 + list2 + list3)))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpcsclgmna.py"", line 4, in <module>
+    assert merge_sorted_list([25, 24, 15, 4, 5, 29, 110],[19, 20, 11, 56, 25, 233, 154],[24, 26, 54, 48])==[4, 5, 11, 15, 19, 20, 24, 24, 25, 25, 26, 29, 48, 54, 56, 110, 154, 233]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_108,1543714304,212,32,1,0,0,244,753332580352
+mbpp_109,mbpp,greedy,"def odd_Equivalent(s, k):
+    count = 0
+    for i in range(k+1):
+        if int(s[i:] + s[:i], 2) % 2 != 0:
+            count += 1
+    return count",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpep4jov4f.py"", line 8, in <module>
+    assert odd_Equivalent(""011001"",6) == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_109,1543714304,94,60,1,0,0,154,475464005632
+mbpp_111,mbpp,greedy,"def common_in_nested_lists(nested_lists):
+    return set.intersection(*map(set, nested_lists))",True,True,,greedy,mbpp_111,1543714304,144,25,1,0,0,169,521775434752
+mbpp_113,mbpp,greedy,"import re
+
+def check_integer(s):
+    return bool(re.match(r'^-?\d+$', s))",True,True,,greedy,mbpp_113,1543714304,72,27,1,0,0,99,305655432192
+mbpp_115,mbpp,greedy,"def is_all_empty(dicts):
+    return len([1 for d in dicts if bool(d)]) == 0",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp0oabds7h.py"", line 4, in <module>
+    assert empty_dit([{},{},{}])==True
+           ^^^^^^^^^
+NameError: name 'empty_dit' is not defined",greedy,mbpp_115,1543714304,77,29,1,0,0,106,327267432448
+mbpp_116,mbpp,greedy,"def tuple_to_int(tup):
+    return int(''.join(map(str, tup)))",True,True,,greedy,mbpp_116,1543714304,81,23,1,0,0,104,321092575232
+mbpp_117,mbpp,greedy,"def list_to_float(lst):
+    return [tuple(map(float, x)) for x in lst]",True,True,,greedy,mbpp_117,1543714304,149,25,1,0,0,174,537212577792
+mbpp_118,mbpp,greedy,"def string_to_list(s):
+    return s.split()",True,True,,greedy,mbpp_118,1543714304,82,16,1,0,0,98,302568003584
+mbpp_119,mbpp,greedy,"def search(nums):
+    low = 0
+    high = len(nums) - 1
+    
+    while low < high:
+        mid = (low + high) // 2
+        
+        if nums[mid] > nums[high]:
+            low = mid + 1
+        else:
+            high = mid
+            
+    return nums[low]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpe_itxnz1.py"", line 15, in <module>
+    assert search([1,1,2,2,3]) == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_119,1543714304,84,75,1,0,0,159,490901148672
+mbpp_120,mbpp,greedy,"def max_product_tuple(tuples):
+    # Sort tuples based on their first element and then second element if needed
+    sorted_tuples = sorted(tuples)
+    
+    # Initialize variables to store the maximum and minimum products
+    max_product = float('-inf')
+    min_product = float('inf')
+    
+    for i in range(len(sorted_tuples)):
+        # Calculate the product of the current tuple with its next tuple
+        product = sorted_tuples[i][0] * sorted_tuples[i+1][0]
+        
+        # Update max_product if the current product is greater than or equal to max_product
+        if product >= max_product:
+            max_product = product
+        
+        # Update min_product if the current product is less than min_product
+        if product <= min_product:
+            min_product = product
+    
+    return max_product - min_product",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp3qzd2m4c.py"", line 23, in <module>
+    assert max_product_tuple([(2, 7), (2, 6), (1, 8), (4, 9)] )==36
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmp3qzd2m4c.py"", line 11, in max_product_tuple
+    product = sorted_tuples[i][0] * sorted_tuples[i+1][0]
+                                    ~~~~~~~~~~~~~^^^^^
+IndexError: list index out of range",greedy,mbpp_120,1543714304,103,175,1,0,0,278,858305153024
+mbpp_123,mbpp,greedy,"def amicable_numbers_sum(n):
+    def is_amicable(a):
+        s = sum([i for i in range(1, int((a**0.5)+1)) if a % i == 0])
+        return s != a and sum([j for j in range(1, int((s**0.5)+1)) if s % j == 0]) == a
+
+    total = 0
+    for num in range(2, n+1):
+        if is_amicable(num):
+            total += num
+    return total",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp57d28b52.py"", line 12, in <module>
+    assert amicable_numbers_sum(999)==504
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_123,1543714304,81,123,1,0,0,204,629835436032
+mbpp_124,mbpp,greedy,"import cmath
+
+def angle_complex(real, imag):
+    return cmath.phase(complex(real, imag))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpiz0cu0cy.py"", line 6, in <module>
+    assert math.isclose(angle_complex(0,1j), 1.5707963267948966, rel_tol=0.001)
+           ^^^^
+NameError: name 'math' is not defined. Did you mean: 'cmath'? Or did you forget to import 'math'?",greedy,mbpp_124,1543714304,104,27,1,0,0,131,404453147648
+mbpp_125,mbpp,greedy,"def find_length(s):
+    max_diff = 0
+    zero_count = 0
+    one_count = 0
+    
+    for i in range(len(s)):
+        if s[i] == '0':
+            zero_count += 1
+        else:
+            one_count += 1
+        
+        current_diff = abs(zero_count - one_count)
+        
+        if current_diff > max_diff:
+            max_diff = current_diff
+            
+    return max_diff",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp9yymookr.py"", line 19, in <module>
+    assert find_length(""11000010001"") == 6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_125,1543714304,101,98,1,0,0,199,614398292992
+mbpp_126,mbpp,greedy,"def sum(n1, n2):
+    s = 0
+    for i in range(1, min(n1, n2)+1):
+        if n1 % i == 0 and n2 % i == 0:
+            s += i
+    return s",True,True,,greedy,mbpp_126,1543714304,80,63,1,0,0,143,441502290944
+mbpp_127,mbpp,greedy,"def multiply_int(a, b):
+    return a * b",True,True,,greedy,mbpp_127,1543714304,72,18,1,0,0,90,277868574720
+mbpp_128,mbpp,greedy,"def long_words(n, words):
+    return [word for word in words if len(word) > n]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpcrcigb1l.py"", line 4, in <module>
+    assert long_words(3,""python is a programming language"")==['python','programming','language']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_128,1543714304,89,27,1,0,0,116,358141718528
+mbpp_129,mbpp,greedy,"def magic_square_test(matrix):
+    n = len(matrix)
+    sum_row = sum_col = sum_diag = sum_inv_diag = 0
+    
+    for i in range(n):
+        sum_row += sum(matrix[i])
+        sum_col += matrix[i][n-1-i]
+    
+    for i in range(n):
+        for j in range(n):
+            if i == j:
+                sum_diag += matrix[i][j]
+            elif (i + j) == (n - 1):
+                sum_inv_diag += matrix[i][j]
+                
+    return sum_row == sum_col and sum_row == sum_diag == sum_inv_diag",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpow0fpvsv.py"", line 18, in <module>
+    assert magic_square_test([[7, 12, 1, 14], [2, 13, 8, 11], [16, 3, 10, 5], [9, 6, 15, 4]])==True
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_129,1543714304,125,134,1,0,0,259,799644009472
+mbpp_130,mbpp,greedy,"from collections import Counter
+
+def max_occurrences(nums):
+    return Counter(nums).most_common(1)[0][0]",True,True,,greedy,mbpp_130,1543714304,114,30,1,0,0,144,444589719552
+mbpp_131,mbpp,greedy,"def reverse_vowels(s):
+    vowels = 'aeiouAEIOU'
+    s_list = list(s)
+    i, j = 0, len(s) - 1
+    
+    while i < j:
+        if s[i] not in vowels: 
+            i += 1
+        elif s[j] not in vowels: 
+            j -= 1
+        else:
+            s_list[i], s_list[j] = s_list[j], s_list[i]
+            i += 1
+            j -= 1
+            
+    return ''.join(s_list)",True,True,,greedy,mbpp_131,1543714304,84,122,1,0,0,206,636010293248
+mbpp_132,mbpp,greedy,"def tup_string(tup):
+    return ''.join(tup)",True,True,,greedy,mbpp_132,1543714304,97,18,1,0,0,115,355054289920
+mbpp_133,mbpp,greedy,"def sum_negativenum(nums):
+    return sum(num for num in nums if num < 0)",True,True,,greedy,mbpp_133,1543714304,109,27,1,0,0,136,419890290688
+mbpp_135,mbpp,greedy,"def hexagonal_num(n):
+    return n * (2*n - 1)",True,True,,greedy,mbpp_135,1543714304,75,22,1,0,0,97,299480574976
+mbpp_137,mbpp,greedy,"def zero_count(arr):
+    return arr.count(0)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp44ugjhf6.py"", line 4, in <module>
+    assert math.isclose(zero_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8]), 0.181818, rel_tol=0.001)
+           ^^^^
+NameError: name 'math' is not defined. Did you forget to import 'math'?",greedy,mbpp_137,1543714304,135,17,1,0,0,152,469289148416
+mbpp_138,mbpp,greedy,"def is_Sum_Of_Powers_Of_Two(n):
+    i = 0
+    while (1 << i) <= n:
+        if ((n & (1 << i)) != 0):
+            return True
+        i += 1
+    return False",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpu1lzjiqm.py"", line 10, in <module>
+    assert is_Sum_Of_Powers_Of_Two(7) == False
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_138,1543714304,91,60,1,0,0,151,466201719808
+mbpp_139,mbpp,greedy,"import math
+
+def circle_circumference(radius):
+    return 2 * math.pi * radius",True,True,,greedy,mbpp_139,1543714304,104,26,1,0,0,130,401365719040
+mbpp_140,mbpp,greedy,"def extract_singly(lst):
+    return {item for sublist in lst for item in sublist}",True,True,,greedy,mbpp_140,1543714304,115,24,1,0,0,139,429152576512
+mbpp_141,mbpp,greedy,"def pancake_sort(arr):
+    def flip(arr, k):
+        """"""Flip the first k elements in arr.""""""
+        for i in range(k // 2):
+            arr[i], arr[k - i - 1] = arr[k - i - 1], arr[i]
+
+    n = len(arr)
+    for size in range(n, 1, -1):
+        # Find the index of the maximum element within this size
+        max_idx = arr.index(max(arr[:size]))
+        # Move the maximum element to its correct position
+        if max_idx != size - 1:
+            flip(arr, max_idx + 1)  # Flip up to the current index
+            flip(arr, size)         # Flip from the current index to the end
+    return arr",True,True,,greedy,mbpp_141,1543714304,106,166,1,0,0,272,839780581376
+mbpp_142,mbpp,greedy,"def count_samepair(list1, list2, list3):
+    return sum(a == b and b == c for a, b, c in zip(list1, list2, list3))",True,True,,greedy,mbpp_142,1543714304,124,45,1,0,0,169,521775434752
+mbpp_143,mbpp,greedy,"def find_lists(tup):
+    return len([i for i in tup if isinstance(i, list)])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpfk5cczir.py"", line 6, in <module>
+    assert find_lists(([9, 8, 7, 6, 5, 4, 3, 2, 1])) == 1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_143,1543714304,95,26,1,0,0,121,373578861568
+mbpp_145,mbpp,greedy,"def max_Abs_Diff(arr):
+    return max([abs(x - y) for x in arr for y in arr if x != y])",True,True,,greedy,mbpp_145,1543714304,87,35,1,0,0,122,376666290176
+mbpp_160,mbpp,greedy,"from math import gcd
+
+def find_solution(a, b, n):
+    def extended_gcd(x, y):
+        if y == 0:
+            return (x, 1)
+        else:
+            g, x, y = extended_gcd(y, x % y)
+            return (g, y - (x // y) * g)
+
+    if gcd(a, b) != 1:
+        return None
+    else:
+        d = gcd(a, b)
+        m, n = extended_gcd(a, b)
+        k = n // d
+        return (k * a // d, k * b // d)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmptlryqcwq.py"", line 19, in <module>
+    assert find_solution(2, 3, 7) == (2, 1)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmptlryqcwq.py"", line 15, in find_solution
+    m, n = extended_gcd(a, b)
+           ^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmptlryqcwq.py"", line 8, in extended_gcd
+    g, x, y = extended_gcd(y, x % y)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmptlryqcwq.py"", line 8, in extended_gcd
+    g, x, y = extended_gcd(y, x % y)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmptlryqcwq.py"", line 8, in extended_gcd
+    g, x, y = extended_gcd(y, x % y)
+    ^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)",greedy,mbpp_160,1543714304,98,137,1,0,0,235,725545722880
+mbpp_161,mbpp,greedy,"def remove_elements(lst, del_lst):
+    return [i for i in lst if i not in del_lst]",True,True,,greedy,mbpp_161,1543714304,133,28,1,0,0,161,497076005888
+mbpp_162,mbpp,greedy,"def sum_series(n):
+    return sum(i * (-1)**i for i in range(n//2+1))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpvhevwa7k.py"", line 4, in <module>
+    assert sum_series(6) == 12
+           ^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_162,1543714304,109,29,1,0,0,138,426065147904
+mbpp_163,mbpp,greedy,"import math
+
+def area_polygon(sides, side_length):
+    return (sides * side_length**2) / (4 * math.tan(math.pi / sides))",True,True,,greedy,mbpp_163,1543714304,98,40,1,0,0,138,426065147904
+mbpp_164,mbpp,greedy,"def are_equivalent(a, b):
+    def sum_of_divisors(n):
+        total = 1
+        for i in range(2, int(n**0.5)+1):
+            if n % i == 0:
+                total += i + n//i
+        return total
+    
+    return sum_of_divisors(a) == sum_of_divisors(b)",True,True,,greedy,mbpp_164,1543714304,84,81,1,0,0,165,509425720320
+mbpp_165,mbpp,greedy,"def count_char_position(s):
+    return sum(1 for i, c in enumerate(s) if ord(c.lower()) - 96 <= i)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpklygr3r8.py"", line 4, in <module>
+    assert count_char_position(""xbcefg"") == 2
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_165,1543714304,93,36,1,0,0,129,398278290432
+mbpp_166,mbpp,greedy,"def find_even_pair(nums):
+    count = 0
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if (nums[i] ^ nums[j]) % 2 == 0:
+                count += 1
+    return count",True,True,,greedy,mbpp_166,1543714304,94,65,1,0,0,159,490901148672
+mbpp_167,mbpp,greedy,"def next_power_of_2(n):
+    return 1 << (n - 1).bit_length()",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp28fhwu26.py"", line 4, in <module>
+    assert next_power_of_2(0) == 1
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_167,1543714304,82,27,1,0,0,109,336529718272
+mbpp_168,mbpp,greedy,"def frequency(lst, num):
+    return lst.count(num)",True,True,,greedy,mbpp_168,1543714304,83,17,1,0,0,100,308742860800
+mbpp_170,mbpp,greedy,"def sum_range_list(nums, left, right):
+    return sum(nums[left:right+1])",True,True,,greedy,mbpp_170,1543714304,114,24,1,0,0,138,426065147904
+mbpp_171,mbpp,greedy,"def perimeter_pentagon(side_length):
+    return side_length * 5",True,True,,greedy,mbpp_171,1543714304,82,21,1,0,0,103,318005146624
+mbpp_172,mbpp,greedy,"def count_occurance(s):
+    return s.count('std')",True,True,,greedy,mbpp_172,1543714304,88,19,1,0,0,107,330354861056
+mbpp_222,mbpp,greedy,"def check_type(t):
+    return isinstance(t[0], type(t[-1]))",True,True,,greedy,mbpp_222,1543714304,93,22,1,0,0,115,355054289920
+mbpp_223,mbpp,greedy,"def is_majority(arr, n, x):
+    count = 0
+    for i in range(n):
+        if arr[i] == x:
+            count += 1
+            if count > n // 2:
+                return True
+    return False",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp6ky5ro6f.py"", line 13, in <module>
+    assert is_majority([1, 1, 2, 2], 5, 1) == False
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmp6ky5ro6f.py"", line 4, in is_majority
+    if arr[i] == x:
+       ~~~^^^
+IndexError: list index out of range",greedy,mbpp_223,1543714304,134,59,1,0,0,193,595873721344
+mbpp_224,mbpp,greedy,"def count_Set_Bits(n):
+    count = 0
+    while n:
+        count += n & 1
+        n >>= 1
+    return count",True,True,,greedy,mbpp_224,1543714304,86,40,1,0,0,126,389016004608
+mbpp_226,mbpp,greedy,"def odd_values_string(s):
+    return s[1::2]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpnxohitpq.py"", line 4, in <module>
+    assert odd_values_string('abcdef') == 'ace'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_226,1543714304,80,19,1,0,0,99,305655432192
+mbpp_227,mbpp,greedy,"def min_of_three(a, b, c):
+    return min(a, b, c)",True,True,,greedy,mbpp_227,1543714304,75,24,1,0,0,99,305655432192
+mbpp_228,mbpp,greedy,"def all_Bits_Set_In_The_Given_Range(n, start, end):
+    return bin(n)[2:].count('1') <= (end - start + 1)",True,True,,greedy,mbpp_228,1543714304,91,43,1,0,0,134,413715433472
+mbpp_229,mbpp,greedy,"def re_arrange_array(arr, n):
+    # Separate negative and non-negative numbers into two lists
+    neg = [x for x in arr[:n] if x < 0]
+    pos = [x for x in arr[n:] if x >= 0]
+
+    # Combine the lists while preserving the original order
+    return neg + pos",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpmsatrm8k.py"", line 9, in <module>
+    assert re_arrange_array([-1, 2, -3, 4, 5, 6, -7, 8, 9], 9) == [-1, -3, -7, 4, 5, 6, 2, 8, 9]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_229,1543714304,163,78,1,0,0,241,744070294528
+mbpp_230,mbpp,greedy,"def replace_blank(s, c):
+    return s.replace(' ', c)",True,True,,greedy,mbpp_230,1543714304,91,20,1,0,0,111,342704575488
+mbpp_232,mbpp,greedy,"def larg_nnum(nums, n):
+    return sorted(set(nums))[-n:]",True,True,,greedy,mbpp_232,1543714304,138,22,1,0,0,160,493988577280
+mbpp_233,mbpp,greedy,"import math
+
+def lateralsuface_cylinder(radius, height):
+    return 2 * math.pi * radius * height",True,True,,greedy,mbpp_233,1543714304,110,31,1,0,0,141,435327433728
+mbpp_234,mbpp,greedy,"def volume_cube(side_length):
+    return side_length ** 3",True,True,,greedy,mbpp_234,1543714304,74,19,1,0,0,93,287130860544
+mbpp_235,mbpp,greedy,"def even_bit_set_number(n):
+    return n | (n - 1)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp7rb__sov.py"", line 4, in <module>
+    assert even_bit_set_number(10) == 10
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_235,1543714304,78,22,1,0,0,100,308742860800
+mbpp_237,mbpp,greedy,"def check_occurences(lst):
+    return {t: lst.count(t) for t in set(lst)}",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp2g87te87.py"", line 4, in <module>
+    assert check_occurences([(3, 1), (1, 3), (2, 5), (5, 2), (6, 3)] ) == {(1, 3): 2, (2, 5): 2, (3, 6): 1}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_237,1543714304,144,27,1,0,0,171,527950291968
+mbpp_238,mbpp,greedy,"def number_of_substrings(s):
+    return len(s) * (len(s) + 1) // 2",True,True,,greedy,mbpp_238,1543714304,80,30,1,0,0,110,339617146880
+mbpp_239,mbpp,greedy,"def get_total_number_of_sequences(m, n):
+    dp = [0] * (n + 1)
+    dp[0] = 1
+    for i in range(n):
+        for j in range(i + 1, min(i + 2, m + 1)):
+            dp[i + 1] += dp[i]
+    return dp[n]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp2dwd6ksk.py"", line 9, in <module>
+    assert get_total_number_of_sequences(10, 4) == 4
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_239,1543714304,116,81,1,0,0,197,608223435776
+mbpp_240,mbpp,greedy,"def replace_list(list1, list2):
+    return [*list1[:-1], *list2]",True,True,,greedy,mbpp_240,1543714304,136,26,1,0,0,162,500163434496
+mbpp_242,mbpp,greedy,"def count_charac(s):
+    return len(s)",True,True,,greedy,mbpp_242,1543714304,75,16,1,0,0,91,280956003328
+mbpp_244,mbpp,greedy,"import math
+
+def next_Perfect_Square(n):
+    return int(math.sqrt(n+1))**2",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmptn112kha.py"", line 7, in <module>
+    assert next_Perfect_Square(6) == 9
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_244,1543714304,81,28,1,0,0,109,336529718272
+mbpp_245,mbpp,greedy,"def max_sum(arr):
+    n = len(arr)
+    inc = [0] * n
+    dec = [0] * n
+    
+    # Calculate maximum sum of increasing subsequence ending at each index
+    for i in range(1, n):
+        inc[i] = arr[i]
+        for j in range(i):
+            if arr[j] < arr[i]:
+                inc[i] = max(inc[i], inc[j] + arr[i])
+    
+    # Calculate maximum sum of decreasing subsequence starting at each index
+    for i in range(n-2, -1, -1):
+        dec[i] = arr[i]
+        for j in range(n-1, i, -1):
+            if arr[j] > arr[i]:
+                dec[i] = max(dec[i], dec[j] + arr[i])
+                
+    # Find the overall maximum sum
+    return max(max(inc), max(dec))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpd5uxapc_.py"", line 23, in <module>
+    assert max_sum([1, 15, 51, 45, 33, 100, 12, 18, 9]) == 194
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_245,1543714304,132,195,1,0,0,327,1009589154816
+mbpp_246,mbpp,greedy,"def babylonian_squareroot(n):
+    x = n / 2.0
+    while True:
+        y = (x + n/x) / 2.0
+        if abs(y - x) < 0.001:
+            return y
+        x = y",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpsvndzsxw.py"", line 9, in <module>
+    assert math.isclose(babylonian_squareroot(10), 3.162277660168379, rel_tol=0.001)
+           ^^^^
+NameError: name 'math' is not defined. Did you forget to import 'math'?",greedy,mbpp_246,1543714304,109,68,1,0,0,177,546474863616
+mbpp_247,mbpp,greedy,"def lps(s):
+    n = len(s)
+    dp = [[0] * (n + 1) for _ in range(n + 1)]
+    
+    for i in range(1, n + 1):
+        for j in range(i, n + 1):
+            if s[i - 1] == s[j - 1]:
+                dp[i][j] = dp[i + 1][j - 1] + 2
+            else:
+                dp[i][j] = max(dp[i + 1][j], dp[i][j - 1])
+                
+    return dp[1][n]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpwajg3n1n.py"", line 14, in <module>
+    assert lps(""TENS FOR TENS"") == 5
+           ^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpwajg3n1n.py"", line 8, in lps
+    dp[i][j] = dp[i + 1][j - 1] + 2
+               ~~^^^^^^^
+IndexError: list index out of range",greedy,mbpp_247,1543714304,85,137,1,0,0,222,685409150976
+mbpp_248,mbpp,greedy,"import math
+
+def harmonic_sum(n):
+    return sum(1 / i for i in range(1, n))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp5jpl0qpk.py"", line 6, in <module>
+    assert math.isclose(harmonic_sum(7), 2.5928571428571425, rel_tol=0.001)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_248,1543714304,110,29,1,0,0,139,429152576512
+mbpp_249,mbpp,greedy,"def intersection_array(arr1, arr2):
+    return list(set(arr1) & set(arr2))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpez64o2il.py"", line 4, in <module>
+    assert intersection_array([1, 2, 3, 5, 7, 8, 9, 10],[1, 2, 4, 8, 9])==[1, 2, 8, 9]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_249,1543714304,116,26,1,0,0,142,438414862336
+mbpp_250,mbpp,greedy,"def count_X(tup, x):
+    return tup.count(x)",True,True,,greedy,mbpp_250,1543714304,125,19,1,0,0,144,444589719552
+mbpp_251,mbpp,greedy,"def insert_element(lst, elem):
+    return [elem] + lst",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpozcla1z_.py"", line 4, in <module>
+    assert insert_element(['Red', 'Green', 'Black'] ,'c')==['c', 'Red', 'c', 'Green', 'c', 'Black']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_251,1543714304,112,20,1,0,0,132,407540576256
+mbpp_252,mbpp,greedy,"from math import sqrt
+
+def convert(c):
+    r = abs(c)
+    theta = cmath.phase(c)
+    return (r, theta)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpfhzyqmat.py"", line 8, in <module>
+    assert convert(1) == (1.0, 0.0)
+           ^^^^^^^^^^
+  File ""/tmp/tmpfhzyqmat.py"", line 5, in convert
+    theta = cmath.phase(c)
+            ^^^^^
+NameError: name 'cmath' is not defined. Did you forget to import 'cmath'?",greedy,mbpp_252,1543714304,79,35,1,0,0,114,351966861312
+mbpp_253,mbpp,greedy,"def count_integer(lst):
+    return sum(isinstance(i, int) for i in lst)",True,True,,greedy,mbpp_253,1543714304,84,23,1,0,0,107,330354861056
+mbpp_255,mbpp,greedy,"from itertools import product
+
+def combinations_colors(colors, n):
+    return [tuple(color for _ in range(n)) for color in colors]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp0oo_5cgi.py"", line 7, in <module>
+    assert combinations_colors( [""Red"",""Green"",""Blue""],2)==[('Red', 'Red'), ('Red', 'Green'), ('Red', 'Blue'), ('Green', 'Green'), ('Green', 'Blue'), ('Blue', 'Blue')]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_255,1543714304,114,33,1,0,0,147,453852005376
+mbpp_256,mbpp,greedy,"def count_Primes_nums(n):
+    def is_prime(num):
+        if num < 2:
+            return False
+        for i in range(2, int(num**0.5) + 1):
+            if num % i == 0:
+                return False
+        return True
+
+    count = 0
+    for i in range(2, n):
+        if is_prime(i):
+            count += 1
+    return count",True,True,,greedy,mbpp_256,1543714304,88,97,1,0,0,185,571174292480
+mbpp_257,mbpp,greedy,"def swap_numbers(num1, num2):
+    return (num2, num1)",True,True,,greedy,mbpp_257,1543714304,90,23,1,0,0,113,348879432704
+mbpp_259,mbpp,greedy,"def maximize_elements(tuples1, tuples2):
+    return tuple(max(x) for x in zip(*tuples1 + tuples2))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpdfpm1e6u.py"", line 4, in <module>
+    assert maximize_elements(((1, 3), (4, 5), (2, 9), (1, 10)), ((6, 7), (3, 9), (1, 1), (7, 3))) == ((6, 7), (4, 9), (2, 9), (7, 10))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_259,1543714304,139,33,1,0,0,172,531037720576
+mbpp_260,mbpp,greedy,"import math
+
+def is_newman_shanks_williams(n):
+    def gcd(a, b):
+        while b:
+            t = b
+            b = a % b
+            a = t
+        return a
+    
+    def lcm(a, b):
+        return (a * b) // gcd(a, b)
+    
+    def next_number(x):
+        y = x + 1
+        while True:
+            if gcd(y, x) != 1:
+                break
+            y += 2
+        return y
+    
+    def shanks_williams_sequence(n):
+        sequence = [2]
+        for i in range(1, n):
+            sequence.append(next_number(sequence[-1]))
+        return sequence
+    
+    def newman_shanks_williams(n):
+        sequence = shanks_williams_sequence(n)
+        return sequence[sequence.index(2) - 1]
+    
+    return newman_shanks_williams(n)
+
+def newman_prime(n):
+    return is_newman_shanks_williams(n) - 1",False,True,TimeoutExpired,greedy,mbpp_260,1543714304,79,222,1,0,0,301,929316011008
+mbpp_261,mbpp,greedy,"def division_elements(tup1, tup2):
+    return tuple(a / b for a, b in zip(tup1, tup2))",True,True,,greedy,mbpp_261,1543714304,111,34,1,0,0,145,447677148160
+mbpp_262,mbpp,greedy,"def split_two_parts(lst, L):
+    return (lst[:L], lst[L:])",True,True,,greedy,mbpp_262,1543714304,140,23,1,0,0,163,503250863104
+mbpp_264,mbpp,greedy,"def dog_age(age):
+    return 5 * age + 7",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmptxa8rqai.py"", line 4, in <module>
+    assert dog_age(12)==61
+           ^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_264,1543714304,74,20,1,0,0,94,290218289152
+mbpp_265,mbpp,greedy,"def list_split(lst, n):
+    return [lst[i::n] for i in range(n)]",True,True,,greedy,mbpp_265,1543714304,169,26,1,0,0,195,602048578560
+mbpp_266,mbpp,greedy,"def lateralsurface_cube(side_length):
+    return 4 * (side_length ** 2)",True,True,,greedy,mbpp_266,1543714304,79,25,1,0,0,104,321092575232
+mbpp_267,mbpp,greedy,"def square_Sum(n):
+    return sum([i**2 for i in range(1, 2*n+1, 2)])",True,True,,greedy,mbpp_267,1543714304,87,34,1,0,0,121,373578861568
+mbpp_268,mbpp,greedy,"def find_star_num(n):
+    return (n * (2 * n - 1)) ** 2",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpesr3ixhv.py"", line 4, in <module>
+    assert find_star_num(3) == 37
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_268,1543714304,74,28,1,0,0,102,314917718016
+mbpp_269,mbpp,greedy,"def ascii_value(char):
+    return ord(char)",True,True,,greedy,mbpp_269,1543714304,71,15,1,0,0,86,265518860288
+mbpp_270,mbpp,greedy,"def sum_even_and_even_index(lst):
+    return sum(x for i, x in enumerate(lst) if i % 2 == 0 and x % 2 == 0)",True,True,,greedy,mbpp_270,1543714304,99,42,1,0,0,141,435327433728
+mbpp_271,mbpp,greedy,"def even_Power_Sum(n):
+    return sum([i**5 for i in range(2, 2*n+1, 2)])",True,True,,greedy,mbpp_271,1543714304,95,36,1,0,0,131,404453147648
+mbpp_272,mbpp,greedy,"def rear_extract(lst):
+    return [t[-1] for t in lst]",True,True,,greedy,mbpp_272,1543714304,122,22,1,0,0,144,444589719552
+mbpp_273,mbpp,greedy,"def substract_elements(tup1, tup2):
+    return tuple(a-b for a,b in zip(tup1, tup2))",True,True,,greedy,mbpp_273,1543714304,115,33,1,0,0,148,456939433984
+mbpp_274,mbpp,greedy,"def even_binomial_Coeff_Sum(n):
+    return sum(binomial_coefficient(i, i//2) for i in range(0, n+1, 2))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp3hu7wnod.py"", line 4, in <module>
+    assert even_binomial_Coeff_Sum(4) == 8
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmp3hu7wnod.py"", line 2, in even_binomial_Coeff_Sum
+    return sum(binomial_coefficient(i, i//2) for i in range(0, n+1, 2))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmp3hu7wnod.py"", line 2, in <genexpr>
+    return sum(binomial_coefficient(i, i//2) for i in range(0, n+1, 2))
+               ^^^^^^^^^^^^^^^^^^^^
+NameError: name 'binomial_coefficient' is not defined",greedy,mbpp_274,1543714304,87,42,1,0,0,129,398278290432
+mbpp_276,mbpp,greedy,"import math
+
+def volume_cylinder(radius, height):
+    return math.pi * (radius ** 2) * height",True,True,,greedy,mbpp_276,1543714304,112,30,1,0,0,142,438414862336
+mbpp_277,mbpp,greedy,"def dict_filter(dictionary, n):
+    return {k: v for k, v in dictionary.items() if v >= n}",True,True,,greedy,mbpp_277,1543714304,161,31,1,0,0,192,592786292736
+mbpp_278,mbpp,greedy,"def count_first_elements(t):
+    return sum(1 for x in t if isinstance(x, int))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpdxlabkn8.py"", line 4, in <module>
+    assert count_first_elements((1, 5, 7, (4, 6), 10) ) == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_278,1543714304,98,26,1,0,0,124,382841147392
+mbpp_279,mbpp,greedy,"def is_num_decagonal(n):
+    return (5*n**2 - n) // 2",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpc2l6qkwh.py"", line 4, in <module>
+    assert is_num_decagonal(3) == 27
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_279,1543714304,74,26,1,0,0,100,308742860800
+mbpp_280,mbpp,greedy,"def sequential_search(arr, elem):
+    for i in range(len(arr)):
+        if arr[i] == elem:
+            return (True, i)
+    return (False, -1)",True,True,,greedy,mbpp_280,1543714304,139,43,1,0,0,182,561912006656
+mbpp_281,mbpp,greedy,"def all_unique(lst):
+    return len(set(lst)) == len(lst)",True,True,,greedy,mbpp_281,1543714304,81,20,1,0,0,101,311830289408
+mbpp_282,mbpp,greedy,"def sub_list(lst1, lst2):
+    return [x - y for x, y in zip(lst1, lst2)]",True,True,,greedy,mbpp_282,1543714304,86,32,1,0,0,118,364316575744
+mbpp_283,mbpp,greedy,"def validate(n):
+    d = [0] * 10
+    for i in str(n):
+        if int(i) > d[int(i)]:
+            return False
+        d[int(i)] += 1
+    return True",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp2qe8u_rl.py"", line 9, in <module>
+    assert validate(1234) == True
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_283,1543714304,90,55,1,0,0,145,447677148160
+mbpp_284,mbpp,greedy,"def check_element(lst, el):
+    return all(x == el for x in lst)",True,True,,greedy,mbpp_284,1543714304,95,23,1,0,0,118,364316575744
+mbpp_285,mbpp,greedy,"def text_match_two_three(text):
+    return ""ab"" in text and (""aab"" in text or ""abb"" in text)",True,True,,greedy,mbpp_285,1543714304,86,32,1,0,0,118,364316575744
+mbpp_286,mbpp,greedy,"def max_sub_array_sum_repeated(arr, n, k):
+    # Calculate prefix sums and store them in an array
+    pre = [0]
+    for i in arr:
+        pre.append(pre[-1] + i)
+    
+    # Initialize variables to store maximum subarray sum and its starting index
+    mx = cur = 0
+    start = end = 0
+    
+    # Iterate through the prefix sums array
+    for i in range(len(pre)):
+        if i > 0: 
+            pre[i] += pre[i-1]
+        
+        # Check if current prefix sum can be used as a subarray sum
+        if (i+1) % k == 0:
+            if pre[i] >= mx:
+                mx = pre[i]
+                start = i-k+1
+                end = i
+                
+    return mx",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpj5s14nwo.py"", line 25, in <module>
+    assert max_sub_array_sum_repeated([10, 20, -30, -1], 4, 3) == 30
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_286,1543714304,110,180,1,0,0,290,895354296320
+mbpp_287,mbpp,greedy,"def square_sum(n):
+    return sum([i**2 for i in range(1, n+1)*2 if i % 2 == 0])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmppu6wy_bo.py"", line 4, in <module>
+    assert square_Sum(2) == 20
+           ^^^^^^^^^^
+NameError: name 'square_Sum' is not defined. Did you mean: 'square_sum'?",greedy,mbpp_287,1543714304,84,38,1,0,0,122,376666290176
+mbpp_290,mbpp,greedy,"from typing import List
+
+def max_length(lists: List[List[int]]) -> tuple:
+    return (len(max(lists, key=len)), *[l for l in lists if len(l) == len(max(lists, key=len))])",True,True,,greedy,mbpp_290,1543714304,119,54,1,0,0,173,534125149184
+mbpp_291,mbpp,greedy,"def count_no_of_ways(n, k):
+    if n <= 2:
+        return k**n
+    
+    dp = [0] * (n + 1)
+    dp[0], dp[1] = k, k*k
+    for i in range(2, n+1):
+        dp[i] = dp[i-1]*k + dp[i-2]
+    
+    return dp[n]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmppgd2ol0u.py"", line 13, in <module>
+    assert count_no_of_ways(3, 2) == 6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_291,1543714304,104,91,1,0,0,195,602048578560
+mbpp_292,mbpp,greedy,"import math
+
+def find(a, b):
+    return int(math.floor(a / b))",True,True,,greedy,mbpp_292,1543714304,80,23,1,0,0,103,318005146624
+mbpp_293,mbpp,greedy,"import math
+
+def otherside_rightangle(a, b):
+    return round(math.sqrt(a**2 + b**2), 3)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpwrs9wnfk.py"", line 6, in <module>
+    assert otherside_rightangle(7,8)==10.63014581273465
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_293,1543714304,92,33,1,0,0,125,385928576000
+mbpp_294,mbpp,greedy,"from typing import *
+from collections import defaultdict
+
+def max_val(lst: List[Union[str, int]]) -> int:
+    return max(map(lambda x: int(x) if isinstance(x, str) else x, lst))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpsvrh4dde.py"", line 7, in <module>
+    assert max_val(['Python', 3, 2, 4, 5, 'version'])==5
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpsvrh4dde.py"", line 5, in max_val
+    return max(map(lambda x: int(x) if isinstance(x, str) else x, lst))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpsvrh4dde.py"", line 5, in <lambda>
+    return max(map(lambda x: int(x) if isinstance(x, str) else x, lst))
+                             ^^^^^^
+ValueError: invalid literal for int() with base 10: 'Python'",greedy,mbpp_294,1543714304,88,50,1,0,0,138,426065147904
+mbpp_295,mbpp,greedy,"def sum_div(n):
+    total = 0
+    for i in range(1, n + 1):
+        if n % i == 0:
+            total += i
+    return total",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmptk_hwpf6.py"", line 8, in <module>
+    assert sum_div(8)==7
+           ^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_295,1543714304,73,47,1,0,0,120,370491432960
+mbpp_296,mbpp,greedy,"def get_Inv_Count(arr):
+    n = len(arr)
+    inv_count = 0
+    for i in range(n):
+        for j in range(i + 1, n):
+            if arr[i] > arr[j]:
+                inv_count += 1
+    return inv_count",True,True,,greedy,mbpp_296,1543714304,83,65,1,0,0,148,456939433984
+mbpp_297,mbpp,greedy,"def flatten_list(lst):
+    return [item for sublist in lst for item in (sublist if isinstance(sublist, list) else [sublist])]",True,True,,greedy,mbpp_297,1543714304,174,36,1,0,0,210,648360007680
+mbpp_299,mbpp,greedy,"def max_aggregate(lst):
+    return max(lst, key=lambda x: (x[1], -ord(x[0][0])))[0]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpfeagwznv.py"", line 4, in <module>
+    assert max_aggregate([('Juan Whelan',90),('Sabah Colley',88),('Peter Nichols',7),('Juan Whelan',122),('Sabah Colley',84)])==('Juan Whelan', 212)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_299,1543714304,121,36,1,0,0,157,484726291456
+mbpp_300,mbpp,greedy,"from itertools import product
+
+def count_binary_seq(n):
+    return len(list(filter(lambda x: sum(int(i) for i in str(x)) == n, map(''.join, product('01', repeat=2*n)))))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp6ma5q5a4.py"", line 6, in <module>
+    assert math.isclose(count_binary_seq(1), 2.0, rel_tol=0.001)
+           ^^^^
+NameError: name 'math' is not defined. Did you forget to import 'math'?",greedy,mbpp_300,1543714304,107,52,1,0,0,159,490901148672
+mbpp_301,mbpp,greedy,"def dict_depth(d):
+    return max((dict_depth(v) for v in d.values()), default=0) + 1 if isinstance(d, dict) else 1",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpodtqhlu1.py"", line 5, in <module>
+    assert dict_depth({'a':1, 'b': {'c':'python'}})==2
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_301,1543714304,84,41,1,0,0,125,385928576000
+mbpp_304,mbpp,greedy,"def find_Element(arr, queries, n, k):
+    # Rotate array arr left by k positions
+    for _ in range(k):
+        temp = arr.pop(0)
+        arr.append(temp)
+
+    # Find the element at the given index
+    return arr[n]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpchdtmakx.py"", line 10, in <module>
+    assert find_Element([1,2,3,4,5],[[0,2],[0,3]],2,1) == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_304,1543714304,97,61,1,0,0,158,487813720064
+mbpp_305,mbpp,greedy,"def start_withp(words):
+    # Filter words that start with 'p' and select the first two
+    return [word for word in words if word.startswith('p')][:2]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpn46phlti.py"", line 5, in <module>
+    assert start_withp([""Python PHP"", ""Java JavaScript"", ""c c++""])==('Python', 'PHP')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_305,1543714304,93,44,1,0,0,137,422977719296
+mbpp_306,mbpp,greedy,"from typing import List
+
+def max_sum_increasing_subseq(arr: List[int], n: int, k: int, m: int) -> int:
+    dp = [arr[0]] * (n + 1)
+    for i in range(1, n):
+        dp[i] = max(dp[i - 1], arr[i])
+    
+    prev = [-1] * (n + 1)
+    for i in range(n - 1, -1, -1):
+        if i < k or i >= m:
+            continue
+        for j in range(i + 1, min(k, m)):
+            if dp[j] > dp[i]:
+                prev[i] = j
+                break
+    
+    res = 0
+    while k > 0:
+        res += arr[k]
+        k = prev[k]
+    
+    return res",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpz2dnll1w.py"", line 24, in <module>
+    assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 4, 6) == 11
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_306,1543714304,133,184,1,0,0,317,978714868736
+mbpp_307,mbpp,greedy,"def colon_tuplex(t, n1, n2):
+    return t[:n1] + (n2,) * (len(t) - n1)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpyhas5kzn.py"", line 4, in <module>
+    assert colon_tuplex((""HELLO"", 5, [], True) ,2,50)==(""HELLO"", 5, [50], True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_307,1543714304,96,39,1,0,0,135,416802862080
+mbpp_308,mbpp,greedy,"from typing import List
+
+def large_product(list1: List[int], list2: List[int], k: int) -> List[int]:
+    # Sort both lists in descending order
+    list1.sort(reverse=True)
+    list2.sort(reverse=True)
+    
+    # Initialize result array with zeros
+    res = [0]*k
+    
+    # Calculate the product for each combination and store it in the result array
+    for i in range(k):
+        res[i] = list1[i] * list2[k-i-1]
+        
+    return res",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpiqln66um.py"", line 17, in <module>
+    assert large_product([1, 2, 3, 4, 5, 6],[3, 6, 8, 9, 10, 6],3)==[60, 54, 50]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_308,1543714304,127,118,1,0,0,245,756420008960
+mbpp_309,mbpp,greedy,"def maximum(a, b):
+    return max(a, b)",True,True,,greedy,mbpp_309,1543714304,75,18,1,0,0,93,287130860544
+mbpp_310,mbpp,greedy,"def string_to_tuple(s):
+    return tuple(list(s))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp_13l4c15.py"", line 4, in <module>
+    assert string_to_tuple(""python 3.0"")==('p', 'y', 't', 'h', 'o', 'n', '3', '.', '0')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_310,1543714304,101,17,1,0,0,118,364316575744
+mbpp_311,mbpp,greedy,"def set_left_most_unset_bit(n):
+    return n | (n - 1)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpappnu808.py"", line 4, in <module>
+    assert set_left_most_unset_bit(10) == 14
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_311,1543714304,77,23,1,0,0,100,308742860800
+mbpp_312,mbpp,greedy,"import math
+
+def volume_cone(radius, height):
+    return (math.pi * radius**2 * height) / 3",True,True,,greedy,mbpp_312,1543714304,104,32,1,0,0,136,419890290688
+mbpp_388,mbpp,greedy,"def highest_Power_of_2(n):
+    return (n - 1).bit_length()",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpea_gi6p8.py"", line 4, in <module>
+    assert highest_Power_of_2(10) == 8
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_388,1543714304,86,25,1,0,0,111,342704575488
+mbpp_389,mbpp,greedy,"def find_lucas(n):
+    if n == 0:
+        return 2
+    elif n == 1:
+        return 1
+    else:
+        a, b = 2, 1
+        for _ in range(2, n + 1):
+            a, b = b, a + b
+        return b",True,True,,greedy,mbpp_389,1543714304,75,77,1,0,0,152,469289148416
+mbpp_390,mbpp,greedy,"def add_string(lst, fmt):
+    return [fmt.format(x) for x in lst]",True,True,,greedy,mbpp_390,1543714304,102,24,1,0,0,126,389016004608
+mbpp_391,mbpp,greedy,"def convert_list_dictionary(keys, values):
+    return [{keys[i]: value} for i, value in enumerate(values)]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpmf7m1n1o.py"", line 4, in <module>
+    assert convert_list_dictionary([""S001"", ""S002"", ""S003"", ""S004""],[""Adina Park"", ""Leyton Marsh"", ""Duncan Boyle"", ""Saim Richards""] ,[85, 98, 89, 92])==[{'S001': {'Adina Park': 85}}, {'S002': {'Leyton Marsh': 98}}, {'S003': {'Duncan Boyle': 89}}, {'S004': {'Saim Richards': 92}}]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: convert_list_dictionary() takes 2 positional arguments but 3 were given",greedy,mbpp_391,1543714304,191,29,1,0,0,220,679234293760
+mbpp_392,mbpp,greedy,"def get_max_sum(n):
+    dp = [0] * (n+1)
+    for i in range(1, n+1):
+        dp[i] = max((dp[i//2] + dp[i//3] + dp[i//4] + dp[i//5]), i)
+    return dp[n]",True,True,,greedy,mbpp_392,1543714304,110,72,1,0,0,182,561912006656
+mbpp_393,mbpp,greedy,"def max_length_list(lst):
+    return (len(max(lst, key=len)), [x for x in lst if len(x) == len(max(lst, key=len))])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp9e9ug18g.py"", line 4, in <module>
+    assert max_length_list([[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]])==(3, [13, 15, 17])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_393,1543714304,115,40,1,0,0,155,478551434240
+mbpp_394,mbpp,greedy,"def check_distinct(tup):
+    return len(set(tup)) == len(tup)",True,True,,greedy,mbpp_394,1543714304,87,24,1,0,0,111,342704575488
+mbpp_395,mbpp,greedy,"def first_non_repeating_character(s):
+    char_count = {}
+    
+    for char in s:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+    
+    for char in s:
+        if char_count[char] == 1:
+            return char
+    
+    return None",True,True,,greedy,mbpp_395,1543714304,80,77,1,0,0,157,484726291456
+mbpp_396,mbpp,greedy,"def check_char(s):
+    return s[0] == s[-1]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpwh51ve8u.py"", line 4, in <module>
+    assert check_char(""abba"") == ""Valid""
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_396,1543714304,81,21,1,0,0,102,314917718016
+mbpp_397,mbpp,greedy,"def median_numbers(a, b, c):
+    return (a + 2 * b + c) / 4",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpkpn6jiua.py"", line 4, in <module>
+    assert median_numbers(25,55,65)==55.0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_397,1543714304,79,30,1,0,0,109,336529718272
+mbpp_398,mbpp,greedy,"def sum_of_digits(nums):
+    return sum(int(i) for i in nums)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp2dsls746.py"", line 4, in <module>
+    assert sum_of_digits([10,2,56])==14
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_398,1543714304,83,22,1,0,0,105,324180003840
+mbpp_399,mbpp,greedy,"def bitwise_xor(tup1, tup2):
+    return tuple(a ^ b for a, b in zip(tup1, tup2))",True,True,,greedy,mbpp_399,1543714304,109,34,1,0,0,143,441502290944
+mbpp_400,mbpp,greedy,"def extract_freq(lst):
+    return len(set(map(tuple, lst)))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpqzv1e8rv.py"", line 4, in <module>
+    assert extract_freq([(3, 4), (1, 2), (4, 3), (5, 6)] ) == 3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_400,1543714304,97,19,1,0,0,116,358141718528
+mbpp_401,mbpp,greedy,"def add_nested_tuples(tup1, tup2):
+    return tuple(map(lambda x, y: (x[0] + y[0], x[1] + y[1]), tup1, tup2))",True,True,,greedy,mbpp_401,1543714304,151,50,1,0,0,201,620573150208
+mbpp_404,mbpp,greedy,"def minimum(a, b):
+    return min(a, b)",True,True,,greedy,mbpp_404,1543714304,73,18,1,0,0,91,280956003328
+mbpp_405,mbpp,greedy,"def check_tuplex(tup, elem):
+    return elem in tup",True,True,,greedy,mbpp_405,1543714304,103,20,1,0,0,123,379753718784
+mbpp_406,mbpp,greedy,"def find_Parity(n):
+    return n % 2 != 0",True,True,,greedy,mbpp_406,1543714304,77,21,1,0,0,98,302568003584
+mbpp_407,mbpp,greedy,"from itertools import permutations
+
+def rearrange_bigger(n):
+    # Convert the number to a list of its digits
+    digits = [int(d) for d in str(n)]
+    
+    # Generate all possible permutations of the digits
+    perms = set(permutations(digits))
+    
+    # Find the first permutation greater than the original number
+    for perm in sorted(perms, reverse=True):
+        if int(''.join(map(str, perm))) > n:
+            return ''.join(map(str, perm))
+
+# Test the function with the provided test case
+assert rearrange_bigger(12) == 21",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp52wg5qni.py"", line 16, in <module>
+    assert rearrange_bigger(12) == 21
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_407,1543714304,81,132,1,0,0,213,657622293504
+mbpp_408,mbpp,greedy,"from typing import List
+
+def k_smallest_pairs(nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
+    res = []
+    for i in range(len(nums1)):
+        for j in range(len(nums2)):
+            if len(res) == k:
+                break
+            res.append([nums1[i], nums2[j]])
+    return res[:k]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpq8m5vcg0.py"", line 14, in <module>
+    assert k_smallest_pairs([1,3,7],[2,4,6],7)==[[1, 2], [1, 4], [3, 2], [1, 6], [3, 4], [3, 6], [7, 2]]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_408,1543714304,110,87,1,0,0,197,608223435776
+mbpp_409,mbpp,greedy,"def min_product_tuple(tuples):
+    # Sort tuples based on their first element in ascending order
+    sorted_tuples = sorted(tuples)
+    
+    # Initialize variables to store the minimum and maximum products
+    min_product = float('inf')
+    max_product = -float('inf')
+    
+    # Iterate through each tuple
+    for i in range(len(sorted_tuples)):
+        j = len(sorted_tuples) - 1 - i
+        
+        # Calculate the product of the current pair of tuples
+        product = sorted_tuples[i][0] * sorted_tuples[j][1]
+        
+        # Update the minimum and maximum products if necessary
+        min_product = min(min_product, product)
+        max_product = max(max_product, product)
+    
+    return max_product",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpnnl6r5ev.py"", line 22, in <module>
+    assert min_product_tuple([(2, 7), (2, 6), (1, 8), (4, 9)] )==8
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_409,1543714304,100,159,1,0,0,259,799644009472
+mbpp_410,mbpp,greedy,"from typing import *
+from collections import defaultdict
+
+def min_val(lst: List[Union[int, str]]) -> int:
+    return min(min(i) for i in lst)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpr5b82x9g.py"", line 7, in <module>
+    assert min_val(['Python', 3, 2, 4, 5, 'version'])==2
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpr5b82x9g.py"", line 5, in min_val
+    return min(min(i) for i in lst)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpr5b82x9g.py"", line 5, in <genexpr>
+    return min(min(i) for i in lst)
+               ^^^^^^
+TypeError: 'int' object is not iterable",greedy,mbpp_410,1543714304,88,40,1,0,0,128,395190861824
+mbpp_411,mbpp,greedy,"def snake_to_camel(snake_str):
+    return ''.join(word.capitalize() or '_' for word in snake_str.split('_'))",True,True,,greedy,mbpp_411,1543714304,80,31,1,0,0,111,342704575488
+mbpp_412,mbpp,greedy,"def remove_odd(nums):
+    return [x for x in nums if not x % 2]",True,True,,greedy,mbpp_412,1543714304,78,25,1,0,0,103,318005146624
+mbpp_413,mbpp,greedy,"def extract_nth_element(lst, n):
+    return [x[0] for x in lst]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpxp2tur4y.py"", line 5, in <module>
+    assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] ,2)==[99, 96, 94, 98]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_413,1543714304,147,25,1,0,0,172,531037720576
+mbpp_414,mbpp,greedy,"def overlapping(seq1, seq2):
+    return any(x in seq2 for x in seq1)",True,True,,greedy,mbpp_414,1543714304,93,26,1,0,0,119,367404004352
+mbpp_415,mbpp,greedy,"from typing import List
+
+def max_Product(nums: List[int]) -> tuple:
+    nums.sort()
+    return (nums[-1] * nums[-2], nums[0] * nums[1])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp_cc5vsxi.py"", line 7, in <module>
+    assert max_Product([1,2,3,4,7,0,8,4]) == (7,8)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_415,1543714304,95,46,1,0,0,141,435327433728
+mbpp_417,mbpp,greedy,"def group_tuples(tuples):
+    # Find the minimum length among all tuples
+    min_len = min(len(t) for t in tuples)
+    
+    # Initialize an empty result list
+    res = []
+    
+    # Iterate over each possible starting index from 0 to min_len-1
+    for i in range(min_len):
+        # Extract elements at indices i and j (where j=i+1) from each tuple
+        temp = [t[i] if len(t) > i else '' for t in tuples]
+        
+        # Append the extracted elements as a tuple to the result list
+        res.append(tuple(temp))
+    
+    return res",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpb6_xwrj9.py"", line 18, in <module>
+    assert group_tuples([('x', 'y'), ('x', 'z'), ('w', 't')]) == [('x', 'y', 'z'), ('w', 't')]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_417,1543714304,103,139,1,0,0,242,747157723136
+mbpp_418,mbpp,greedy,"def Find_Max(lst):
+    return max(lst, key=len)",True,True,,greedy,mbpp_418,1543714304,92,18,1,0,0,110,339617146880
+mbpp_419,mbpp,greedy,"def round_and_sum(numbers):
+    rounded_numbers = [round(num) for num in numbers]
+    return sum(rounded_numbers) * len(numbers)",True,True,,greedy,mbpp_419,1543714304,142,35,1,0,0,177,546474863616
+mbpp_420,mbpp,greedy,"def cube_Sum(n):
+    return sum([i**3 for i in range(1, n+1)*2 if i % 2 == 0])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpay8awpm8.py"", line 4, in <module>
+    assert cube_Sum(2) == 72
+           ^^^^^^^^^^^
+  File ""/tmp/tmpay8awpm8.py"", line 2, in cube_Sum
+    return sum([i**3 for i in range(1, n+1)*2 if i % 2 == 0])
+                              ~~~~~~~~~~~~~^~
+TypeError: unsupported operand type(s) for *: 'range' and 'int'",greedy,mbpp_420,1543714304,78,39,1,0,0,117,361229147136
+mbpp_421,mbpp,greedy,"def concatenate_tuple(tup):
+    return ''.join(map(str, tup))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp0xyblqiu.py"", line 4, in <module>
+    assert concatenate_tuple((""ID"", ""is"", 4, ""UTS"") ) == 'ID-is-4-UTS'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_421,1543714304,91,20,1,0,0,111,342704575488
+mbpp_422,mbpp,greedy,"def find_Average_Of_Cube(n):
+    return sum(i**3 for i in range(1, n+1)) / n",True,True,,greedy,mbpp_422,1543714304,82,34,1,0,0,116,358141718528
+mbpp_424,mbpp,greedy,"def extract_rear(tup):
+    return [x[-1] for x in tup]",True,True,,greedy,mbpp_424,1543714304,94,24,1,0,0,118,364316575744
+mbpp_425,mbpp,greedy,"def count_element_in_list(lst, elem):
+    return sum(1 for sublist in lst if elem in sublist)",True,True,,greedy,mbpp_425,1543714304,103,28,1,0,0,131,404453147648
+mbpp_426,mbpp,greedy,"def filter_oddnumbers(nums):
+    return [num for num in nums if num % 2 != 0]",True,True,,greedy,mbpp_426,1543714304,105,28,1,0,0,133,410628004864
+mbpp_427,mbpp,greedy,"from datetime import datetime
+
+def change_date_format(date):
+    return date.strftime('%d-%m-%Y')",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpyqvlpen5.py"", line 6, in <module>
+    assert change_date_format(""2026-01-02"") == '02-01-2026'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpyqvlpen5.py"", line 4, in change_date_format
+    return date.strftime('%d-%m-%Y')
+           ^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'strftime'",greedy,mbpp_427,1543714304,98,27,1,0,0,125,385928576000
+mbpp_428,mbpp,greedy,"def shell_sort(arr):
+    n = len(arr)
+    gap = n // 2
+    
+    while gap > 0:
+        for i in range(gap, n):
+            temp = arr[i]
+            j = i
+            
+            # Shift earlier gap-sorted elements up until the correct location for arr[i] is found
+            while j >= gap and arr[j - gap] > temp:
+                arr[j] = arr[j - gap]
+                j -= gap
+            
+            # Put temp (the original arr[i]) in its correct location
+            arr[j] = temp
+        gap //= 2
+    return arr",True,True,,greedy,mbpp_428,1543714304,140,133,1,0,0,273,842868009984
+mbpp_429,mbpp,greedy,"def and_tuples(tup1, tup2):
+    return tuple(a & b for a, b in zip(tup1, tup2))",True,True,,greedy,mbpp_429,1543714304,108,34,1,0,0,142,438414862336
+mbpp_430,mbpp,greedy,"def parabola_directrix(a,b,c):
+    return -4*c/b",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpvrfii77s.py"", line 4, in <module>
+    assert parabola_directrix(5,3,2)==-198
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_430,1543714304,82,22,1,0,0,104,321092575232
+mbpp_431,mbpp,greedy,"def common_element(list1, list2):
+    return len(set(list1) & set(list2)) > 0",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpr18dosxp.py"", line 5, in <module>
+    assert common_element([1,2,3,4,5], [6,7,8,9])==None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_431,1543714304,96,30,1,0,0,126,389016004608
+mbpp_432,mbpp,greedy,"import math
+
+def median_trapezium(a, b, c):
+    return int((a + b) / 2)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpu279zta3.py"", line 8, in <module>
+    assert median_trapezium(6,9,4)==7.5
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_432,1543714304,84,32,1,0,0,116,358141718528
+mbpp_433,mbpp,greedy,"def check_greater(arr, num):
+    return all(x < num for x in arr)",True,True,,greedy,mbpp_433,1543714304,93,23,1,0,0,116,358141718528
+mbpp_434,mbpp,greedy,"import re
+
+def text_match_one(text):
+    return bool(re.match(r'.*ab*', text))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp55nsxxz4.py"", line 6, in <module>
+    assert text_match_one(""ac"")==False
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_434,1543714304,78,26,1,0,0,104,321092575232
+mbpp_435,mbpp,greedy,"def last_Digit(n):
+    return n % 10",True,True,,greedy,mbpp_435,1543714304,77,19,1,0,0,96,296393146368
+mbpp_436,mbpp,greedy,"def neg_nos(lst):
+    return [x for x in lst if x < 0]",True,True,,greedy,mbpp_436,1543714304,83,25,1,0,0,108,333442289664
+mbpp_437,mbpp,greedy,"def remove_odd(s):
+    return ''.join([c for c in s if not (ord(c) % 2 == 0)])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp8ma9rj6r.py"", line 4, in <module>
+    assert remove_odd(""python"")==(""yhn"")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_437,1543714304,72,33,1,0,0,105,324180003840
+mbpp_438,mbpp,greedy,"def count_bidirectional(tuples):
+    return len(set(tuple(sorted(pair)) for pair in tuples))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp5z38hin_.py"", line 5, in <module>
+    assert count_bidirectional([(5, 6), (1, 3), (6, 5), (9, 1), (6, 5), (2, 1)] ) == 2
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_438,1543714304,105,25,1,0,0,130,401365719040
+mbpp_439,mbpp,greedy,"def multiple_to_single(nums):
+    return int(''.join(map(str, nums)))",True,True,,greedy,mbpp_439,1543714304,88,22,1,0,0,110,339617146880
+mbpp_440,mbpp,greedy,"import re
+
+def find_adverb_position(sentence):
+    # Find all adverbs in the sentence using regex
+    adverbs = re.findall(r'\b([a-zA-Z]+)ly\b', sentence)
+    
+    # Get the first adverb and its position
+    if adverbs:
+        return (adverbs[0], sentence.find(adverbs[0]), adverbs[0])
+    else:
+        return None",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp7f67mzx4.py"", line 13, in <module>
+    assert find_adverb_position(""clearly!! we can see the sky"")==(0, 7, 'clearly')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_440,1543714304,93,91,1,0,0,184,568086863872
+mbpp_441,mbpp,greedy,"def surfacearea_cube(size):
+    return 6 * (size ** 2)",True,True,,greedy,mbpp_441,1543714304,77,22,1,0,0,99,305655432192
+mbpp_442,mbpp,greedy,"def positive_count(arr):
+    return sum(1 for x in arr if x > 0) / len(arr)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpfogjahz1.py"", line 4, in <module>
+    assert positive_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8])==0.54
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_442,1543714304,113,29,1,0,0,142,438414862336
+mbpp_443,mbpp,greedy,"def largest_neg(nums):
+    return max(x for x in nums if x < 0)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpgbxicvuj.py"", line 4, in <module>
+    assert largest_neg([1,2,3,-4,-6]) == -6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_443,1543714304,83,24,1,0,0,107,330354861056
+mbpp_444,mbpp,greedy,"def trim_tuple(tuples_list, k):
+    return [(x[:k] if len(x) > k else x) for x in tuples_list]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpoh1z_h8y.py"", line 4, in <module>
+    assert trim_tuple([(5, 3, 2, 1, 4), (3, 4, 9, 2, 1),(9, 1, 2, 3, 5), (4, 8, 2, 1, 7)], 2) == '[(2,), (9,), (2,), (2,)]'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_444,1543714304,147,36,1,0,0,183,564999435264
+mbpp_445,mbpp,greedy,"def index_multiplication(tup1, tup2):
+    return tuple(map(lambda x: tuple([i * j for i, j in zip(x, y)]), zip(*tup1)))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpmrexfyuq.py"", line 4, in <module>
+    assert index_multiplication(((1, 3), (4, 5), (2, 9), (1, 10)),((6, 7), (3, 9), (1, 1), (7, 3)) ) == ((6, 21), (12, 45), (2, 9), (7, 30))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpmrexfyuq.py"", line 2, in index_multiplication
+    return tuple(map(lambda x: tuple([i * j for i, j in zip(x, y)]), zip(*tup1)))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmpmrexfyuq.py"", line 2, in <lambda>
+    return tuple(map(lambda x: tuple([i * j for i, j in zip(x, y)]), zip(*tup1)))
+                                                               ^
+NameError: name 'y' is not defined",greedy,mbpp_445,1543714304,151,45,1,0,0,196,605136007168
+mbpp_446,mbpp,greedy,"def count_Occurrence(lst, tpl):
+    return sum(1 for i in lst if i in tpl)",True,True,,greedy,mbpp_446,1543714304,99,28,1,0,0,127,392103433216
+mbpp_447,mbpp,greedy,"def cube_nums(nums):
+    return [num ** 3 for num in nums]",True,True,,greedy,mbpp_447,1543714304,143,22,1,0,0,165,509425720320
+mbpp_448,mbpp,greedy,"def cal_sum(n):
+    def perrin():
+        a, b = 0, 1
+        yield a
+        yield b
+        while True:
+            c = a + b
+            yield c
+            a, b = b, c
+
+    return sum(next(perrin()) for _ in range(n))",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp9vbw0d1d.py"", line 13, in <module>
+    assert cal_sum(9) == 49
+           ^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_448,1543714304,74,73,1,0,0,147,453852005376
+mbpp_450,mbpp,greedy,"def extract_string(lst, n):
+    return [s[-n:] for s in lst]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpz9je3xe0.py"", line 4, in <module>
+    assert extract_string(['Python', 'list', 'exercises', 'practice', 'solution'] ,8)==['practice', 'solution']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_450,1543714304,96,24,1,0,0,120,370491432960
+mbpp_451,mbpp,greedy,"def remove_whitespaces(s):
+    return s.replace("" "", """")",True,True,,greedy,mbpp_451,1543714304,79,19,1,0,0,98,302568003584
+mbpp_452,mbpp,greedy,"def loss_amount(sale_price, cost_price):
+    return max(0, sale_price - cost_price)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp72d6mnjm.py"", line 4, in <module>
+    assert loss_amount(1500,1200)==0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_452,1543714304,87,27,1,0,0,114,351966861312
+mbpp_453,mbpp,greedy,"def sumofFactors(n):
+    def isEvenFactor(x):
+        return x % 2 == 0
+
+    total = 0
+    for i in range(1, n + 1):
+        if n % i == 0 and isEvenFactor(i):
+            total += i
+    return total",True,True,,greedy,mbpp_453,1543714304,78,70,1,0,0,148,456939433984
+mbpp_454,mbpp,greedy,"import re
+
+def text_match_wordz(text):
+    # Define the pattern to match words containing 'z'
+    pattern = r'\b\w*z\b'
+    # Use regex search to find if the pattern is in the text
+    return bool(re.search(pattern, text))",True,True,,greedy,mbpp_454,1543714304,73,62,1,0,0,135,416802862080
+mbpp_455,mbpp,greedy,"def check_monthnumb_number(month):
+    return month in [1, 3, 5, 7, 8, 10, 12]",True,True,,greedy,mbpp_455,1543714304,79,40,1,0,0,119,367404004352
+mbpp_456,mbpp,greedy,"def reverse_string_list(lst):
+    return [s[::-1] for s in lst]",True,True,,greedy,mbpp_456,1543714304,110,23,1,0,0,133,410628004864
+mbpp_457,mbpp,greedy,"def Find_Min(lst):
+    return min(lst, key=len)",True,True,,greedy,mbpp_457,1543714304,83,18,1,0,0,101,311830289408
+mbpp_458,mbpp,greedy,"def rectangle_area(length, width):
+    return length * width",True,True,,greedy,mbpp_458,1543714304,75,18,1,0,0,93,287130860544
+mbpp_459,mbpp,greedy,"def remove_uppercase(s):
+    return ''.join([i for i in s if not i.isupper()])",True,True,,greedy,mbpp_459,1543714304,93,27,1,0,0,120,370491432960
+mbpp_460,mbpp,greedy,"def Extract(lst):
+    return [sublist[0] for sublist in lst]",True,True,,greedy,mbpp_460,1543714304,103,22,1,0,0,125,385928576000
+mbpp_461,mbpp,greedy,"def upper_ctr(s):
+    return sum(1 for c in s if c.isupper())",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp3hoychis.py"", line 4, in <module>
+    assert upper_ctr('PYthon') == 1
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_461,1543714304,76,24,1,0,0,100,308742860800
+mbpp_462,mbpp,greedy,"from typing import *
+from itertools import chain, product
+
+def combinations_list(lst: List[str]) -> List[List[str]]:
+    return [list(comb) for comb in chain.from_iterable(product(*[(lst[i],) for i in range(len(lst))]))]",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpsbc2hut_.py"", line 7, in <module>
+    assert combinations_list(['orange', 'red', 'green', 'blue'])==[[], ['orange'], ['red'], ['red', 'orange'], ['green'], ['green', 'orange'], ['green', 'red'], ['green', 'red', 'orange'], ['blue'], ['blue', 'orange'], ['blue', 'red'], ['blue', 'red', 'orange'], ['blue', 'green'], ['blue', 'green', 'orange'], ['blue', 'green', 'red'], ['blue', 'green', 'red', 'orange']]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_462,1543714304,181,58,1,0,0,239,737895437312
+mbpp_463,mbpp,greedy,"def max_subarray_product(arr):
+    if not arr:
+        return 0
+    
+    max_product = float('-inf')
+    current_max = float('-inf')
+    min_product = float('inf')
+    
+    for num in arr:
+        temp = max(num, current_max * num, min_product * num)
+        min_product = min(num, current_max * num, min_product * num)
+        current_max = temp
+        
+        max_product = max(max_product, current_max)
+        
+    return max_product",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpm6btnk6s.py"", line 18, in <module>
+    assert max_subarray_product([1, -2, -3, 0, 7, -8, -2]) == 112
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_463,1543714304,97,109,1,0,0,206,636010293248
+mbpp_464,mbpp,greedy,"def check_value(dct, value):
+    return len(set(dct.values())) == 1",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpgywp64xz.py"", line 4, in <module>
+    assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},10)==False
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_464,1543714304,111,25,1,0,0,136,419890290688
+mbpp_465,mbpp,greedy,"def drop_empty(d):
+    return {k: v for k, v in d.items() if v is not None}",True,True,,greedy,mbpp_465,1543714304,101,30,1,0,0,131,404453147648
+mbpp_468,mbpp,greedy,"from typing import List
+
+def max_product(nums: List[int]) -> int:
+    dp = [nums[0]] * len(nums)
+    for i in range(1, len(nums)):
+        for j in range(i):
+            if nums[i] > nums[j]:
+                dp[i] = max(dp[i], dp[j] * nums[i])
+    return max(dp)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpdscjuiud.py"", line 11, in <module>
+    assert max_product([3, 100, 4, 5, 150, 6]) == 3000
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_468,1543714304,103,81,1,0,0,184,568086863872
+mbpp_470,mbpp,greedy,"def add_pairwise(tup):
+    return tuple(x + y for x, y in zip(tup, tup[1:]))",True,True,,greedy,mbpp_470,1543714304,104,32,1,0,0,136,419890290688
+mbpp_471,mbpp,greedy,"def find_remainder(arr, n):
+    return reduce(lambda x, y: (x * y) % n, arr)",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmptivhniun.py"", line 4, in <module>
+    assert find_remainder([ 100, 10, 5, 25, 35, 14 ],11) ==9
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/tmp/tmptivhniun.py"", line 2, in find_remainder
+    return reduce(lambda x, y: (x * y) % n, arr)
+           ^^^^^^
+NameError: name 'reduce' is not defined",greedy,mbpp_471,1543714304,100,31,1,0,0,131,404453147648
+mbpp_472,mbpp,greedy,"def check_Consecutive(nums):
+    return len(set(nums)) == 1",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmp4788n1v9.py"", line 4, in <module>
+    assert check_Consecutive([1,2,3,4,5]) == True
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_472,1543714304,84,21,1,0,0,105,324180003840
+mbpp_473,mbpp,greedy,"def tuple_intersection(list1, list2):
+    return {tuple(sorted(x)) for x in list1} & {tuple(sorted(x)) for x in list2}",True,True,,greedy,mbpp_473,1543714304,144,39,1,0,0,183,564999435264
+mbpp_474,mbpp,greedy,"def replace_char(s, old, new):
+    return s.replace(old, new)",True,True,,greedy,mbpp_474,1543714304,75,22,1,0,0,97,299480574976
+mbpp_475,mbpp,greedy,"def sort_counter(counter):
+    return sorted(counter.items(), key=lambda x: x[1])",False,True,"Traceback (most recent call last):
+  File ""/tmp/tmpvhp89onz.py"", line 4, in <module>
+    assert sort_counter({'Math':81, 'Physics':83, 'Chemistry':87})==[('Chemistry', 87), ('Physics', 83), ('Math', 81)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",greedy,mbpp_475,1543714304,107,24,1,0,0,131,404453147648
+mbpp_476,mbpp,greedy,"def big_sum(arr):
+    return max(arr) + min(arr)",True,True,,greedy,mbpp_476,1543714304,83,19,1,0,0,102,314917718016
+mbpp_477,mbpp,greedy,"def is_lower(s):
+    return s.lower()",True,True,,greedy,mbpp_477,1543714304,75,15,1,0,0,90,277868574720
+mbpp_478,mbpp,greedy,"def remove_lowercase(s):
+    return ''.join([i for i in s if not i.islower()])",True,True,,greedy,mbpp_478,1543714304,76,26,1,0,0,102,314917718016
+mbpp_479,mbpp,greedy,"def first_Digit(n):
+    return int(str(abs(n))[0])",True,True,,greedy,mbpp_479,1543714304,77,20,1,0,0,97,299480574976

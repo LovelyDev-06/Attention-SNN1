@@ -5,18 +5,18 @@ import torch.nn as nn
 class configs(object):
     def __init__(self):
         self.dt = 25
-        self.T = 60
+        self.T = 20
 
         self.attention = "no"
         self.c_ratio=8
         self.t_ratio=5
         self.epoch = 0
-        self.num_epochs = 300
+        self.num_epochs = 0
         self.onlyTest = True
-        self.pretrained_path = os.path.dirname(os.path.abspath(__file__)) + os.sep + "Result" + os.sep + "CSA_SNN(CNN)-DVS-Gesture_dt=25ms_T=40.t7"
+        self.pretrained_path = os.path.dirname(os.path.abspath(__file__)) + os.sep + "Results" + os.sep + "CSA_SNN(CNN)-DVS-Gesture_dt=25ms_T=40.t7"
 
-        self.batch_size = 128
-        self.batch_size_test = 128
+        self.batch_size = 16
+        self.batch_size_test = 16
 
         # None  'kaiming'  'xavier'
         self.init_method = None
@@ -31,7 +31,7 @@ class configs(object):
         self.target_size = 11
 
         # Data
-        self.clip = 10
+        self.clip = 5
         self.is_train_Enhanced = True
         self.is_spike = False
         self.interval_scaling = False
@@ -66,7 +66,7 @@ class configs(object):
 
         # Path
         self.name = None
-        self.modelPath = os.path.dirname(os.path.abspath(__file__)) + os.sep + "Result"
+        self.modelPath = os.path.dirname(os.path.abspath(__file__)) + os.sep + "Results"
         self.modelNames = None
         self.recordPath = self.modelPath
 
@@ -83,7 +83,7 @@ class configs(object):
         # Dataloader
         self.drop_last = False
         self.pip_memory = False
-        self.num_work = 8
+        self.num_work = 0
 
         # model
         self.model = None
